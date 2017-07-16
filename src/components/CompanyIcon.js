@@ -32,7 +32,7 @@ export const PureProgress = ({
 );
 
 export const enhance = compose(
-  setDisplayName('CompanyLogo'),
+  setDisplayName('CompanyIcon'),
   defaultProps({
     size: 32,
     fill: '#ffffff',
