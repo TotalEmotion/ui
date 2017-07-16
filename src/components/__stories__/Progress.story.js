@@ -1,14 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean } from '@storybook/addon-knobs';
-import Toggle from '../Toggle';
+import { number } from '@storybook/addon-knobs';
+import Progress from '../Progress';
 
-storiesOf('Toggle', module)
+storiesOf('Progress', module)
   .add('default', () => {
     return (
       <div style={{padding: 20}}>
-        <Toggle
-          checked={boolean('Checked', false)}
+        <Progress
+          value={number('Value', 20)}
         />
       </div>
     );
