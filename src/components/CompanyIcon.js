@@ -23,7 +23,7 @@ const stylesheet = ({
   },
 });
 
-export const PureProgress = ({
+export const CompanyIcon = ({
   styles,
 }) => (
   <div style={styles.root}>
@@ -42,4 +42,4 @@ export const enhance = compose(
   })),
 );
 
-export default enhance(PureProgress);
+export default enhance(CompanyIcon);
