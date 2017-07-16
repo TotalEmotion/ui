@@ -7,6 +7,7 @@ import {
   withProps,
 } from 'recompose';
 import r from 'ramda';
+import { palette } from '../constants/css';
 
 const stylesheet = ({
   checked,
@@ -18,7 +19,7 @@ const stylesheet = ({
     },
     track: {
       position: 'relative',
-      backgroundColor: '#e3e5e5',
+      backgroundColor: palette.grey,
       width: 32,
       height: 6,
       borderRadius: 16,
@@ -26,7 +27,7 @@ const stylesheet = ({
     switch: {
       position: 'absolute',
       top: -5,
-      backgroundColor: '#2979ff',
+      backgroundColor: palette.secondary,
       width: 16,
       height: 16,
       borderRadius: 8,

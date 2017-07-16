@@ -6,6 +6,8 @@ addDecorator(withKnobs);
 function loadStories() {
   require('../src/components/__stories__/Toggle.story.js');
   require('../src/components/__stories__/Progress.story.js');
+  require('../src/components/__stories__/CompanyLogo.story.js');
+  require('../src/components/__stories__/CompanyIcon.story.js');
   // You can require as many stories as you need.
 }
 

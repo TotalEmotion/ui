@@ -6,6 +6,7 @@ import {
   defaultProps,
   withProps,
 } from 'recompose';
+import { palette } from '../constants/css';
 
 const stylesheet = ({
   value,
@@ -14,7 +15,7 @@ const stylesheet = ({
   default: {
     root: {
       position: 'relative',
-      backgroundColor: '#e3e5e5',
+      backgroundColor: palette.grey,
       width: '100%',
       height: 4,
       borderRadius: 2,
@@ -29,7 +30,7 @@ const stylesheet = ({
       width: `${value}%`,
       maxWidth: `${max}%`,
       borderRadius: 2,
-      backgroundColor: '#2cb370',
+      backgroundColor: palette.primary,
       transition: '0.3s width ease-in-out',
     },
   },
