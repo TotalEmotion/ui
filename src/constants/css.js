@@ -1,8 +1,11 @@
 export const palette = {
-  primary: '#2cb370',
-  secondary: '#2979ff',
+  primary: '#2979ff',
+  secondary: '#2cb370',
+  // variants
+  primaryLight: '#4a90e2',
   // gradients
-  secondaryGradient: '#2020a0',
+  primaryGradient: '#2020a0',
   // when we have N greys, name appropriately
   grey: '#e3e5e5',
+  // grey: '#b5b5b9'
 };

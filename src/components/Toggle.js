@@ -27,7 +27,7 @@ const stylesheet = ({
     switch: {
       position: 'absolute',
       top: -5,
-      backgroundColor: palette.secondary,
+      backgroundColor: palette.primary,
       width: 16,
       height: 16,
       borderRadius: 8,
