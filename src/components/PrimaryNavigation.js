@@ -100,10 +100,7 @@ export const NavigationItem = compose(
   withHandlers({
     handleClick: ({
       onClick,
-    }) => (e) => {
-      e.preventDefault();
-      onClick();
-    },
+    }) => () => onClick(),
   }),
 )(PureNavigationLink);
 
