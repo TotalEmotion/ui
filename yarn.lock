@@ -153,6 +153,20 @@
     react-split-pane "^0.1.63"
     redux "^3.6.0"
 
+"@team-griffin/css-longhand@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@team-griffin/css-longhand/-/css-longhand-0.1.0.tgz#7a9a2dcbc436253906ac189de8055e055403b0af"
+  dependencies:
+    lodash.reduce "^4.6.0"
+    lodash.upperfirst "^4.3.1"
+
+"@team-griffin/css-sides@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@team-griffin/css-sides/-/css-sides-0.1.1.tgz#afd2fb7b67a6c0c905928d9399d27a5eb516084f"
+  dependencies:
+    "@team-griffin/css-longhand" "^0.1.0"
+    lodash.reduce "^4.6.0"
+
 "@team-griffin/eslint-config@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@team-griffin/eslint-config/-/eslint-config-3.0.0.tgz#9dd6a10d858221033b00f6637dbf06c40f0e0176"
@@ -3431,6 +3445,10 @@ lodash.pick@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
 
+lodash.reduce@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.reduce/-/lodash.reduce-4.6.0.tgz#f1ab6b839299ad48f784abbf476596f03b914d3b"
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
@@ -3455,6 +3473,10 @@ lodash.templatesettings@^4.0.0:
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
+
+lodash.upperfirst@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
 
 lodash@4.x.x, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.4:
   version "4.17.4"
