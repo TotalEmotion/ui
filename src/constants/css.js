@@ -9,3 +9,11 @@ export const palette = {
   grey: '#e3e5e5',
   // grey: '#b5b5b9'
 };
+
+export const breakpoints = {
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 1024,
+  xl: 1200,
+};

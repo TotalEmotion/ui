@@ -6,26 +6,32 @@ import {
   withProps,
   withHandlers,
 } from 'recompose';
-import { palette } from '../constants/css';
+import { createResponsiveConnect } from 'react-matchmedia-connect';
+import { breakpoints } from '../constants/css';
 import r from 'ramda';
 
 const stylesheet = (props) => reactCSS({
   default: {
     root: {
+      whiteSpace: 'nowrap',
     },
     links: {
       listStyle: 'none',
       paddingLeft: 0,
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'flex-end',
+      marginLeft: -10,
+      marginRight: -10,
+      marginBottom: 0,
     },
     link: {
-      marginLeft: 60,
+      paddingLeft: 10,
+      paddingRight: 10,
       textTransform: 'uppercase',
+      webkitFontSmoothing: 'antialiased',
     },
     anchor: {
-      color: '#737acb',
+      color: 'rgba(255,255,255,0.35)',
       cursor: 'pointer',
       fontSize: 13,
       lineHeight: 1,
@@ -33,7 +39,7 @@ const stylesheet = (props) => reactCSS({
       transition: 'color 0.2s ease-in-out',
     },
     button: {
-      color: '#737acb',
+      color: 'rgba(255,255,255,0.35)',
       cursor: 'pointer',
       textTransform: 'uppercase',
       backgroundColor: 'transparent',
@@ -48,13 +54,36 @@ const stylesheet = (props) => reactCSS({
   },
   hover: {
     anchor: {
-      color: '#949ae2',
+      color: 'rgba(255,255,255,0.45)',
       textDecoration: 'none',
     },
     button: {
-      color: '#949ae2',
+      color: 'rgba(255,255,255,0.45)',
     },
   },
+  medium: {
+    links: {
+      marginRight: -15,
+      marginLeft: -15
+    },
+    link: {
+      paddingLeft: 15,
+      paddingRight: 15,
+    },
+  },
+  large: {
+    links: {
+      marginLeft: -30,
+      marginRight: -30,
+    },
+    link: {
+      paddingLeft: 30,
+      paddingRight: 30,
+    }
+  }
+}, {
+  medium: props.isMinSm,
+  large: props.isMinMd,
 }, props);
 
 export const PureNavigationLink = r.ifElse(
@@ -124,8 +153,14 @@ export const PurePrimaryNavigation = ({
   </nav>
 );
 
+const connect = createResponsiveConnect(breakpoints);
+
 export const enhance = compose(
   setDisplayName('PrimaryNavigation'),
+  connect([
+    'isMinSm',
+    'isMinMd',
+  ]),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
   })),

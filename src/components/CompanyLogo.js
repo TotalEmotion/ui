@@ -16,7 +16,7 @@ const stylesheet = ({
 }) => reactCSS({
   default: {
     root: {
-      display: 'inline-block',
+      display: 'block',
       width: width,
       height: height,
       fill: fill,

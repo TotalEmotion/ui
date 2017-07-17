@@ -4582,6 +4582,10 @@ react-komposer@^2.0.0:
     react-stubber "^1.0.0"
     shallowequal "^0.2.2"
 
+react-matchmedia-connect@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-matchmedia-connect/-/react-matchmedia-connect-0.1.2.tgz#9a5945691b72b08283cc0a42ccd58fbc7db4ad86"
+
 react-modal@^1.7.6, react-modal@^1.7.7:
   version "1.9.7"
   resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-1.9.7.tgz#07ef56790b953e3b98ef1e2989e347983c72871d"
