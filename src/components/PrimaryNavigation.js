@@ -28,7 +28,7 @@ const stylesheet = (props) => reactCSS({
       paddingLeft: 10,
       paddingRight: 10,
       textTransform: 'uppercase',
-      webkitFontSmoothing: 'antialiased',
+      WebkitFontSmoothing: 'antialiased',
     },
     anchor: {
       color: 'rgba(255,255,255,0.35)',
