@@ -91,6 +91,7 @@ export const enhance = compose(
   }),
   defaultProps({
     kind: Kind.PRIMARY,
+    type: 'button',
   }),
   hover,
   withProps((ownerProps) => ({

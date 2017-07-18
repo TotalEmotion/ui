@@ -9,6 +9,7 @@ storiesOf('Button', module)
       <div style={{padding: 20}}>
         <Button
           kind={select('Kind', Kind, Kind.PRIMARY)}
+          onClick={() => console.log('clicked')}
         >
           {'Schedule free demo'}
         </Button>
