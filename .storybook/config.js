@@ -29,6 +29,7 @@ function loadStories() {
   require('../src/components/__stories__/Progress.story.js');
   require('../src/components/__stories__/Metric.story.js');
   require('../src/components/__stories__/Panel.story.js');
+  require('../src/components/__stories__/Button.story.js');
   require('../src/components/__stories__/Footer.story.js');
   // You can require as many stories as you need.
 }
