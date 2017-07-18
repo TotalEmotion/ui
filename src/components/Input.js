@@ -39,7 +39,7 @@ const stylesheet = (props) => reactCSS({
   active: r.equals(true, props.active),
 });
 
-export const PureProgress = ({
+export const PureInput = ({
   styles,
   inputProps,
 }) => (
@@ -50,7 +50,7 @@ export const PureProgress = ({
 );
 
 export const enhance = compose(
-  setDisplayName('Progress'),
+  setDisplayName('Input'),
   defaultProps({
     type: 'text',
   }),
@@ -62,4 +62,4 @@ export const enhance = compose(
   })),
 );
 
-export default enhance(PureProgress);
+export default enhance(PureInput);
