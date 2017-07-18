@@ -25,6 +25,8 @@ storiesOf('Label', module)
           onChange={() => console.log('changed')}
           active={boolean('Active', false)}
         />
+        <br />
+        <small><em>Use FormGroup for this pattern</em></small>
       </div>
     );
   });

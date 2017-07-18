@@ -10,11 +10,10 @@ const stylesheet = () => reactCSS({
   default: {
     root: {
       color: '#596e78',
-      display: 'block',
-      marginBottom: 10,
       fontSize: 12,
       fontWeight: 600,
       cursor: 'pointer',
+      marginBottom: 0,
     },
   },
 });
