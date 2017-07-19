@@ -10,6 +10,8 @@ export const palette = {
   // when we have N greys, name appropriately
   grey: '#e3e5e5',
   // grey: '#b5b5b9'
+  red: '#d62c41',
+  orange: '#f5a623',
 };
 
 export const breakpoints = {

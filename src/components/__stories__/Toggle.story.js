@@ -8,7 +8,7 @@ storiesOf('Toggle', module)
     return (
       <div style={{padding: 20}}>
         <Toggle
-          checked={boolean('Checked', false)}
+          on={boolean('On', false)}
         />
       </div>
     );

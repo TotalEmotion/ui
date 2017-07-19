@@ -3,7 +3,7 @@ import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import VideoCard from '../VideoCard';
 
-storiesOf('VideoCard', module)
+storiesOf('Video Card', module)
   .add('One', () => {
     return (
       <div

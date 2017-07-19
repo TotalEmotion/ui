@@ -9,6 +9,7 @@ import {
 import cssSides, { Side } from '@team-griffin/css-sides';
 import longhand from '@team-griffin/css-longhand';
 import { palette } from '../constants/css';
+import { srOnly } from '../helpers/css';
 import { Heading, H } from '@team-griffin/react-heading-section';
 import r from 'ramda';
 
@@ -103,15 +104,7 @@ const stylesheet = ({
       },
       // the form part
       input: {
-        // basically equivalent to .sr-only
-        position: 'absolute',
-        width: 1,
-        height: 1,
-        padding: 0,
-        margin: -1,
-        overflow: 'hidden',
-        clip: 'rect(0,0,0,0)',
-        border: 0,
+        ...srOnly,
       },
       selectionCircle: {
         ...longhand('border', {

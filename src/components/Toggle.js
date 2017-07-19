@@ -10,7 +10,7 @@ import r from 'ramda';
 import { palette } from '../constants/css';
 
 const stylesheet = ({
-  checked,
+  on,
 }) => reactCSS({
   default: {
     root: {
@@ -38,25 +38,25 @@ const stylesheet = ({
       position: 'absolute',
     },
   },
-  enabled: {
+  on: {
     switch: {
       left: 16,
     },
   },
-  disabled: {
+  off: {
     switch: {
       left: 0,
       backgroundColor: '#aab2b5',
     },
   },
 }, {
-  enabled: r.equals(checked, true),
-  disabled: r.equals(checked, false),
+  on: r.equals(on, true),
+  off: r.equals(on, false),
 });
 
 export const PureToggle = ({
   styles,
-  checked,
+  on,
   ...inputProps
 }) => (
   <label
@@ -69,7 +69,7 @@ export const PureToggle = ({
     <input
       style={styles.input}
       type="checkbox"
-      checked={checked}
+      checked={on}
       {...inputProps}
     />
   </label>
@@ -81,7 +81,7 @@ export const enhance = compose(
     styles: stylesheet(ownerProps),
   })),
   defaultProps({
-    checked: false,
+    on: false,
   }),
 );
 
