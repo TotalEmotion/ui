@@ -14,6 +14,7 @@ const stylesheet = () => {
     position: 'absolute',
     bottom: 0,
     borderRadius: 30,
+    opacity: 0,
   };
   const bubble1Animation = radium.keyframes({
     '0%': {
