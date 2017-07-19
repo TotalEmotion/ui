@@ -37,7 +37,7 @@ storiesOf('Video Card', module)
                 selectable={selectable}
                 selected={boolean('First Selected', false)}
                 mediaSrc={'//placebeyonce.com/500-200'}
-                title="Maui By Air The Best Way Around The Island"
+                title="Tips for a Healthy Clear Complexion"
                 date="08 Jun 2017"
               />
             </div>
@@ -55,7 +55,7 @@ storiesOf('Video Card', module)
                 selectable={selectable}
                 selected={boolean('Third Selected', false)}
                 mediaSrc={'//placebeyonce.com/500-200'}
-                title="Maui By Air The Best Way Around The Island"
+                title="Moon Gazing"
                 date="08 Jun 2017"
               />
             </div>

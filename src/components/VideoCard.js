@@ -24,9 +24,13 @@ const stylesheet = ({
       root: {
         position: 'relative',
         display: 'flex',
+        // not a fan of calc but flexboxing and needing to keep multiple
+        // aligned items the same height when dynamic
+        height: 'calc(100% - 20px)',
         marginBottom: 20,
       },
       gradient: {
+        display: 'flex',
         width: '100%',
         ...longhand('border', {
           ...longhand('left', {
@@ -51,6 +55,9 @@ const stylesheet = ({
           left: -borderOffset,
           right: -borderOffset,
         }),
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
         backgroundColor: '#ffffff',
         transition: `
           padding 0.1s ease-in-out,
@@ -81,25 +88,31 @@ const stylesheet = ({
           left: 18,
           right: 18,
         }),
+        marginBottom: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        flex: 1,
+        width: '100%',
         borderStyle: 'solid',
         borderColor: '#eae8f5',
         transition: `
           padding 0.1s ease-in-out,
-          border 0.1s ease-in-out
+          border 0.1s ease-in-out,
+          margin 0.1s ease-in-out
         `,
       },
       title: {
         color: palette.primary,
         fontSize: 15,
         lineHeight: 1.6,
-        height: 60,
-        maxHeight: 60,
-        overflow: 'hidden',
-        textOverflow: 'ellipses',
+        minHeight: 40,
+        marginBottom: 20,
+        textTransform: 'capitalize',
+        flexGrow: 1,
       },
       date: {
         color: '#555555',
-        fontSize: 10,
+        fontSize: 11,
         fontWeight: 600,
       },
       // the form part
@@ -147,6 +160,9 @@ const stylesheet = ({
         ...longhand('padding', {
           left: (18 - borderOffset),
           right: (18 - borderOffset),
+        }),
+        ...longhand('margin', {
+          bottom: -borderOffset,
         }),
         // remove inner grey border
         borderColor: 'transparent',
