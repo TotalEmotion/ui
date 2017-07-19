@@ -2,6 +2,7 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { StyleRoot } from 'radium';
 import css from '!raw-loader!sass-loader!../scss/main.scss';
 import {
   HeadingRoot,
@@ -13,7 +14,7 @@ addDecorator(withKnobs);
 addDecorator(function(getStory) {
   const story = getStory();
   return (
-    <div>
+    <StyleRoot>
       <style>
         {css}
       </style>
@@ -22,7 +23,7 @@ addDecorator(function(getStory) {
           {story}
         </HeadingSection>
       </HeadingRoot>
-    </div>
+    </StyleRoot>
   );
 });
 
@@ -44,6 +45,7 @@ function loadStories() {
   require('../src/components/__stories__/Button.story.js');
   require('../src/components/__stories__/VideoCard.story.js');
   require('../src/components/__stories__/Footer.story.js');
+  require('../src/components/__stories__/ProcessingIcon.story.js');
   // You can require as many stories as you need.
 }
 
