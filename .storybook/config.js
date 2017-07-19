@@ -3,6 +3,10 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import css from '!raw-loader!sass-loader!../scss/main.scss';
+import {
+  HeadingRoot,
+  HeadingSection,
+} from '@team-griffin/react-heading-section';
 
 addDecorator(withKnobs);
 
@@ -13,7 +17,11 @@ addDecorator(function(getStory) {
       <style>
         {css}
       </style>
-      {story}
+      <HeadingRoot>
+        <HeadingSection>
+          {story}
+        </HeadingSection>
+      </HeadingRoot>
     </div>
   );
 });
@@ -33,6 +41,7 @@ function loadStories() {
   require('../src/components/__stories__/Metric.story.js');
   require('../src/components/__stories__/Panel.story.js');
   require('../src/components/__stories__/Button.story.js');
+  require('../src/components/__stories__/VideoCard.story.js');
   require('../src/components/__stories__/Footer.story.js');
   // You can require as many stories as you need.
 }

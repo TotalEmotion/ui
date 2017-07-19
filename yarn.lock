@@ -185,6 +185,13 @@
     minimist "^1.2.0"
     ramda "^0.23.0"
 
+"@team-griffin/react-heading-section@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@team-griffin/react-heading-section/-/react-heading-section-1.0.0.tgz#b1c0493a2b46d940ffa62efbef732bab432dbe67"
+  dependencies:
+    react-broadcast "^0.1.2"
+    recompose "^0.23.1"
+
 "@team-griffin/react-inline-svg@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@team-griffin/react-inline-svg/-/react-inline-svg-3.1.1.tgz#263e527460006776e2d336997a3135220cecfff3"
@@ -3009,7 +3016,7 @@ interpret@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.3.tgz#cbc35c62eeee73f19ab7b10a801511401afc0f90"
 
-invariant@2.x.x, invariant@^2.2.0, invariant@^2.2.2:
+invariant@2.x.x, invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -4545,6 +4552,12 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-broadcast@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-broadcast/-/react-broadcast-0.1.2.tgz#950de63578a2af399a396067a617af7402182330"
+  dependencies:
+    invariant "^2.2.1"
+
 react-color@^2.11.4:
   version "2.13.1"
   resolved "https://registry.yarnpkg.com/react-color/-/react-color-2.13.1.tgz#8ea05094b7cd1a57f900d1c210b88132e72d460f"
@@ -4758,7 +4771,7 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-recompose@^0.23.4:
+recompose@^0.23.1, recompose@^0.23.4:
   version "0.23.5"
   resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.23.5.tgz#72ac8261246bec378235d187467d02a721e8b1de"
   dependencies:
