@@ -33,6 +33,7 @@ function loadStories() {
   require('../src/components/__stories__/CompanyIcon.story.js');
   require('../src/components/__stories__/PrimaryNavigation.story.js');
   require('../src/components/__stories__/Header.story.js');
+  require('../src/components/__stories__/MediaHero.story.js');
   require('../src/components/__stories__/SecondaryNavigationRibbon.story.js');
   require('../src/components/__stories__/Toggle.story.js');
   require('../src/components/__stories__/TextToggle.story.js');

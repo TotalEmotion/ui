@@ -51,6 +51,7 @@ export const PureHeader = ({
           <div style={styles.logo}>
             <CompanyLogo
               height={logoSize}
+              fill="#ffffff"
             />
           </div>
         </div>
