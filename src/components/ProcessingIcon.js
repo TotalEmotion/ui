@@ -114,10 +114,7 @@ export const PureProcessingIcon = ({
       <span style={styles.bubble2}/>
       <span style={styles.bubble3}/>
       <div style={styles.icon}>
-        <CompanyIcon
-          fill={palette.primary}
-          size={60}
-          />
+        <CompanyIcon size={60}/>
       </div>
     </div>
     <p style={styles.text}>{'Nearly there!'}</p>

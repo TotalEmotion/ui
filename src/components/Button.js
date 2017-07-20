@@ -71,7 +71,7 @@ const stylesheet = (props) => reactCSS({
   secondary: r.equals(props.kind, Kind.SECONDARY),
 }, props);
 
-export const PureProgress = ({
+export const PureButton = ({
   styles,
   children,
   buttonProps,
@@ -103,4 +103,4 @@ export const enhance = compose(
   })),
 );
 
-export default enhance(PureProgress);
+export default enhance(PureButton);

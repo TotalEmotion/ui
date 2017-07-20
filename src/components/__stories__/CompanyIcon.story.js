@@ -13,6 +13,19 @@ storiesOf('Company Icon', module)
       >
         <CompanyIcon
           size={number('Size (px square)', 32)}
+        />
+      </div>
+    );
+  })
+  .add('with fill', () => {
+    return (
+      <div
+        style={{
+          padding: 20,
+        }}
+      >
+        <CompanyIcon
+          size={number('Size (px square)', 32)}
           fill={color('Color', '#2979ff')}
         />
       </div>

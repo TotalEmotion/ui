@@ -8,27 +8,42 @@ import {
 } from 'recompose';
 import { InlineSVG } from '@team-griffin/react-inline-svg';
 import companyLogo from '!svg-inline-loader!../assets/logo-full.svg';
+import companyLogoBranded from '!svg-inline-loader!../assets/logo-full-branded.svg';
+import r from 'ramda';
+import rA from 'ramda-adjunct/lib';
 
 const stylesheet = ({
   width,
   height,
   fill,
+  custom,
 }) => reactCSS({
   default: {
-    root: {
+    icon: {
       display: 'block',
       width: width,
       height: height,
+    },
+  },
+  custom: {
+    icon: {
       fill: fill,
     },
   },
+}, {
+  custom,
 });
 
-export const PureProgress = ({
+export const PureCompanyLogo = ({
   styles,
+  custom,
 }) => (
-  <div style={styles.root}>
-    <InlineSVG src={companyLogo}/>
+  <div style={styles.icon}>
+    {r.ifElse(
+      r.equals(true),
+      r.always(<InlineSVG src={companyLogo}/>),
+      r.always(<InlineSVG src={companyLogoBranded}/>)
+    )(custom)}
   </div>
 );
 
@@ -36,9 +51,9 @@ export const enhance = compose(
   setDisplayName('CompanyLogo'),
   defaultProps({
     height: 50,
-    fill: '#ffffff',
   }),
   withProps((ownerProps) => ({
+    custom: rA.isNotNil(ownerProps.fill),
     // aspect ratio of SVG: 6.8:1
     width: ownerProps.height * 6.8,
   })),
@@ -47,4 +62,4 @@ export const enhance = compose(
   })),
 );
 
-export default enhance(PureProgress);
+export default enhance(PureCompanyLogo);
