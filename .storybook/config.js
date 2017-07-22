@@ -11,11 +11,19 @@ import {
 
 addDecorator(withKnobs);
 
+const fonts = `
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+`;
+
 addDecorator(function(getStory) {
   const story = getStory();
   return (
     <StyleRoot>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat"/>
       <style>
+        {fonts}
         {css}
       </style>
       <HeadingRoot>
