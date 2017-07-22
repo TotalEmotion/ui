@@ -41,6 +41,7 @@ function loadStories() {
   require('../src/components/__stories__/CompanyIcon.story.js');
   require('../src/components/__stories__/PrimaryNavigation.story.js');
   require('../src/components/__stories__/Header.story.js');
+  require('../src/components/__stories__/MediaHero.story.js');
   require('../src/components/__stories__/SecondaryNavigationRibbon.story.js');
   require('../src/components/__stories__/Toggle.story.js');
   require('../src/components/__stories__/TextToggle.story.js');
@@ -54,6 +55,7 @@ function loadStories() {
   require('../src/components/__stories__/VideoCard.story.js');
   require('../src/components/__stories__/Footer.story.js');
   require('../src/components/__stories__/ProcessingIcon.story.js');
+  require('../src/components/__stories__/EmptyPrompt.story.js');
   // You can require as many stories as you need.
 }
 

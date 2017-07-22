@@ -36,6 +36,7 @@
     "prop-types": "^15.5.10",
     "radium": "^0.19.1",
     "ramda": "^0.24.1",
+    "ramda-adjunct": "^1.10.2",
     "react-matchmedia-connect": "^0.1.2",
     "reactcss": "^1.2.2",
     "recompose": "^0.24.0"

@@ -13,6 +13,19 @@ storiesOf('Company Logo', module)
       >
         <CompanyLogo
           height={number('Height', 50)}
+        />
+      </div>
+    );
+  })
+  .add('with fill', () => {
+    return (
+      <div
+        style={{
+          padding: 20,
+        }}
+      >
+        <CompanyLogo
+          height={number('Height', 50)}
           fill={color('Color', '#2979ff')}
         />
       </div>

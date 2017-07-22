@@ -4539,6 +4539,10 @@ radium@^0.19.1:
     prop-types "^15.5.8"
     rimraf "^2.6.1"
 
+ramda-adjunct@^1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-1.10.2.tgz#73220144fd2a5051e059c79dad5972d9f0b50abd"
+
 ramda@^0.23.0:
   version "0.23.0"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.23.0.tgz#ccd13fff73497a93974e3e86327bfd87bd6e8e2b"
