@@ -16,6 +16,7 @@ import color from 'color';
 export const Kind = {
   PRIMARY: 'PRIMARY',
   SECONDARY: 'SECONDARY',
+  DETRIMENTAL: 'DETRIMENTAL',
 };
 
 const stylesheet = (props) => reactCSS({
@@ -45,30 +46,37 @@ const stylesheet = (props) => reactCSS({
       // since the hover state can be different depending on the kind
       backgroundColor: r.cond([
         [ r.equals(Kind.PRIMARY), r.always(
-          color(palette.secondary).lighten(0.2)
+          color(palette.jadeGreen).lighten(0.2)
         ) ],
         [ r.equals(Kind.SECONDARY), r.always(
-          color(palette.primary).lighten(0.1)
+          color(palette.clearBlue).lighten(0.1)
         ) ],
-        [ r.T, r.always(color(palette.secondary).lighten(0.2)) ],
+        [ r.T, r.always(color(palette.jadeGreen).lighten(0.2)) ],
       ])(props.kind),
     },
   },
   primary: {
     root: {
-      backgroundColor: palette.secondary,
+      backgroundColor: palette.jadeGreen,
       color: '#fff',
     },
   },
   secondary: {
     root: {
-      backgroundColor: palette.primary,
+      backgroundColor: palette.clearBlue,
+      color: '#fff',
+    },
+  },
+  detrimental: {
+    root: {
+      backgroundColor: palette.red,
       color: '#fff',
     },
   },
 }, {
   primary: r.equals(props.kind, Kind.PRIMARY),
   secondary: r.equals(props.kind, Kind.SECONDARY),
+  detrimental: r.equals(props.kind, Kind.DETRIMENTAL),
 }, props);
 
 export const PureButton = ({

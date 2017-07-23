@@ -20,7 +20,7 @@ const stylesheet = () => reactCSS({
     },
     result: {
       display: 'block',
-      color: palette.primaryLight,
+      color: palette.darkSkyBlue,
       fontSize: 36,
       fontWeight: 600,
       lineHeight: 1,

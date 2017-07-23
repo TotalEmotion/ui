@@ -13,8 +13,8 @@ const stylesheet = () => reactCSS({
       backgroundImage: `
         linear-gradient(
           to right,
-          ${palette.primary},
-          ${palette.primaryGradient}
+          ${palette.clearBlue},
+          ${palette.sapphire}
         )
       `,
       paddingTop: 45,

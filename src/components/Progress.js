@@ -30,7 +30,7 @@ const stylesheet = ({
       width: `${value}%`,
       maxWidth: `${max}%`,
       borderRadius: 2,
-      backgroundColor: palette.secondary,
+      backgroundColor: palette.jadeGreen,
       transition: '0.3s width ease-in-out',
     },
   },

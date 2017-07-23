@@ -12,7 +12,7 @@ import longhand from '@team-griffin/css-longhand';
 import { palette } from '../constants/css';
 import color from 'color';
 
-const overlayColor = color(palette.tertiaryLight).alpha(0.6);
+const overlayColor = color(palette.darkSlateBlue).alpha(0.8);
 
 const stylesheet = (props) => reactCSS({
   default: {
@@ -73,15 +73,16 @@ const stylesheet = (props) => reactCSS({
       }),
     },
     title: {
-      fontSize: 26,
+      fontSize: 30,
       lineHeight: 1.4,
-      letterSpacing: 1.5,
+      letterSpacing: 1,
+      fontWeight: 500,
       color: '#ffffff',
       maxWidth: 480,
       ...cssSides('margin', Side.X, 'auto'),
     },
     date: {
-      fontSize: 12,
+      fontSize: 14,
       color: '#bebebe',
     },
   },

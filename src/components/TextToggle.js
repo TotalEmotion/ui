@@ -34,7 +34,8 @@ const stylesheet = ({
         bottomColor: 'transparent',
       }),
       cursor: 'pointer',
-      fontSize: 12,
+      color: '#555555',
+      fontSize: 14,
       lineHeight: 1,
       minWidth: 90,
       textTransform: 'uppercase',
@@ -51,19 +52,18 @@ const stylesheet = ({
   },
   on: {
     root: {
-      color: '#555555',
       borderBottomColor: r.cond([
-        [ r.equals(Kind.JOY), r.always(palette.primary) ],
+        [ r.equals(Kind.JOY), r.always(palette.clearBlue) ],
         [ r.equals(Kind.SURPRISE), r.always(palette.orange) ],
         [ r.equals(Kind.NEGATIVE), r.always(palette.red) ],
-        [ r.equals(Kind.ATTENTION), r.always(palette.secondary) ],
-        [ r.T, r.always(palette.primary) ],
+        [ r.equals(Kind.ATTENTION), r.always(palette.jadeGreen) ],
+        [ r.T, r.always(palette.clearBlue) ],
       ])(kind),
     },
   },
   off: {
     root: {
-      color: '#b3b3b3',
+      opacity: 0.5,
     },
   },
 }, {

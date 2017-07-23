@@ -8,12 +8,13 @@ import {
   HeadingRoot,
   HeadingSection,
 } from '@team-griffin/react-heading-section';
+import { typography } from '../src/constants/css';
 
 addDecorator(withKnobs);
 
 const fonts = `
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: ${typography.fontFamily}
 }
 `;
 
@@ -21,10 +22,13 @@ addDecorator(function(getStory) {
   const story = getStory();
   return (
     <StyleRoot>
-      <link href="https://fonts.googleapis.com/css?family=Montserrat"/>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat"
+      />
       <style>
-        {fonts}
         {css}
+        {fonts}
       </style>
       <HeadingRoot>
         <HeadingSection>

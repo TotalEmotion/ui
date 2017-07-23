@@ -21,6 +21,9 @@ const stylesheet = () => {
       opacity: 0,
       bottom: 0,
     },
+    '25%': {
+      opacity: 0,
+    },
     '50%': {
       opacity: 1,
     },
@@ -34,6 +37,9 @@ const stylesheet = () => {
       bottom: 0,
       opacity: 0,
     },
+    '25%': {
+      opacity: 0,
+    },
     '50%': {
       opacity: 1,
     },
@@ -45,6 +51,9 @@ const stylesheet = () => {
   const bubble3Animation = radium.keyframes({
     '0%': {
       bottom: 0,
+      opacity: 0,
+    },
+    '25%': {
       opacity: 0,
     },
     '50%': {
@@ -78,8 +87,8 @@ const stylesheet = () => {
         left: 0,
         width: 8,
         height: 8,
-        backgroundColor: palette.primaryGradient,
-        animation: 'x 1.3s ease 0s infinite',
+        backgroundColor: palette.sapphire,
+        animation: 'x 1.6s ease 0s infinite',
         animationName: bubble1Animation,
       },
       bubble2: {
@@ -89,7 +98,7 @@ const stylesheet = () => {
         width: 16,
         height: 16,
         backgroundColor: '#ccdcfd',
-        animation: 'x 1.9s ease 0.5s infinite',
+        animation: 'x 2.1s ease 0.3s infinite',
         animationName: bubble2Animation,
       },
       bubble3: {
@@ -98,7 +107,7 @@ const stylesheet = () => {
         width: 12,
         height: 12,
         backgroundColor: '#4839d8',
-        animation: 'x 1.6s ease 0.2s infinite',
+        animation: 'x 1.9s ease 0.1s infinite',
         animationName: bubble3Animation,
       },
     },

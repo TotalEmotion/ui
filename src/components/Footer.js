@@ -11,7 +11,7 @@ import { palette } from '../constants/css';
 const stylesheet = () => reactCSS({
   default: {
     root: {
-      backgroundColor: palette.tertiary,
+      backgroundColor: palette.dark,
       paddingTop: 45,
       paddingBottom: 100,
       color: '#767d80',

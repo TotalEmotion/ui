@@ -13,11 +13,14 @@ storiesOf('Masthead', module)
     return (
       <Masthead>
         <div style={{
-            marginLeft: 20,
-            marginRight: 20,
-          }}
+          marginLeft: 20,
+          marginRight: 20,
+        }}
         >
-          <CompanyLogo height={30}/>
+          <CompanyLogo
+            fill="#ffffff"
+            height={30}
+          />
         </div>
       </Masthead>
     );

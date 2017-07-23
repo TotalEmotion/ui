@@ -4,19 +4,17 @@ import {
   compose,
   setDisplayName,
   withProps,
-  withHandlers,
 } from 'recompose';
 import { createResponsiveConnect } from 'react-matchmedia-connect';
 import { breakpoints, palette } from '../constants/css';
 import longhand from '@team-griffin/css-longhand';
-import cssSides, { Side } from '@team-griffin/css-sides';
 import r from 'ramda';
 
 const stylesheet = (props) => reactCSS({
   default: {
     root: {
       whiteSpace: 'nowrap',
-      backgroundColor: palette.secondary,
+      backgroundColor: palette.jadeGreen,
       color: '#ffffff',
     },
     links: {
@@ -37,12 +35,15 @@ const stylesheet = (props) => reactCSS({
     },
     anchor: {
       display: 'block',
-      color: '#ffffff',
+      color: 'rgba(255, 255, 255, 0.5)',
       cursor: 'pointer',
-      fontSize: 12,
+      fontSize: 14,
       lineHeight: 1,
-      fontWeight: 'bold',
-      transition: 'border-bottom-color 0.2s ease-in-out',
+      fontWeight: 600,
+      transition: `
+        border-bottom-color 0.2s ease-in-out,
+        color 0.2s ease-in-out
+      `,
       ...longhand('padding', {
         top: 15,
         bottom: 12,
@@ -58,6 +59,7 @@ const stylesheet = (props) => reactCSS({
   },
   hover: {
     anchor: {
+      color: 'rgba(255, 255, 255, 1)',
       textDecoration: 'none',
     },
   },
@@ -83,6 +85,7 @@ const stylesheet = (props) => reactCSS({
   },
   active: {
     anchor: {
+      color: 'rgba(255, 255, 255, 1)',
       borderBottomColor: '#fff',
     },
   },

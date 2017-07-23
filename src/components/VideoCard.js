@@ -36,16 +36,16 @@ const stylesheet = ({
           ...longhand('left', {
             width: borderOffset,
             style: 'solid',
-            color: palette.primary,
+            color: palette.clearBlue,
           }),
           ...longhand('right', {
             width: borderOffset,
             style: 'solid',
-            color: palette.primaryGradient,
+            color: palette.sapphire,
           }),
         }),
         backgroundImage: `
-          linear-gradient(to right, ${palette.primary} 0%, ${palette.primaryGradient} 100%)
+          linear-gradient(to right, ${palette.clearBlue} 0%, ${palette.sapphire} 100%)
         `,
         transition: 'opacity 0.3s ease-in-out',
       },
@@ -102,9 +102,10 @@ const stylesheet = ({
         `,
       },
       title: {
-        color: palette.primary,
-        fontSize: 15,
+        color: palette.clearBlue,
+        fontSize: 18,
         lineHeight: 1.6,
+        fontWeight: 500,
         minHeight: 40,
         marginBottom: 20,
         textTransform: 'capitalize',
@@ -112,8 +113,8 @@ const stylesheet = ({
       },
       date: {
         color: '#555555',
-        fontSize: 11,
-        fontWeight: 600,
+        fontSize: 12,
+        fontWeight: 500,
       },
       // the form part
       input: {
@@ -123,7 +124,7 @@ const stylesheet = ({
         ...longhand('border', {
           width: 2,
           style: 'solid',
-          color: palette.primary,
+          color: palette.clearBlue,
         }),
         position: 'absolute',
         top: 20,
@@ -135,7 +136,7 @@ const stylesheet = ({
         textAlign: 'center',
       },
       selectionCircleIcon: {
-        color: palette.primary,
+        color: palette.clearBlue,
         fontSize: 20,
         lineHeight: '24px',
       },
