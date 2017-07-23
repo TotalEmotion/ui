@@ -15,7 +15,6 @@ const stylesheet = () => reactCSS({
       paddingTop: 45,
       paddingBottom: 100,
       color: '#767d80',
-      fill: '#ffffff',
       textAlign: 'center',
       fontSize: 11,
     },
@@ -32,7 +31,10 @@ export const PureFooter = ({
 }) => (
   <div style={styles.root}>
     <div style={styles.logo}>
-      <CompanyLogo height={25}/>
+      <CompanyLogo
+        height={25}
+        fill="#ffffff"
+      />
     </div>
     <p>{`\u00A9 ${year} All rights reserved &mdash; US patents pending.`}</p>
   </div>
