@@ -6,7 +6,6 @@ import {
   withProps,
   defaultProps,
 } from 'recompose';
-import cssSides, { Side } from '@team-griffin/css-sides';
 import longhand from '@team-griffin/css-longhand';
 import { palette } from '../constants/css';
 import { srOnly } from '../helpers/css';
@@ -137,8 +136,8 @@ const stylesheet = ({
       },
       selectionCircleIcon: {
         color: palette.clearBlue,
-        fontSize: 20,
-        lineHeight: '24px',
+        fontSize: 16,
+        lineHeight: '26px',
       },
     },
     selectable: {
@@ -189,7 +188,7 @@ const VideoCardCheckbox = r.ifElse(
           r.always(
             <span style={styles.selectionCircleIcon}>
               {/* ✓ */}
-              {'\u2713'}
+              {'\u2714'}
             </span>
           )
         )(selected)}

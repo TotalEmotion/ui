@@ -60,6 +60,7 @@ function loadStories() {
   require('../src/components/__stories__/Footer.story.js');
   require('../src/components/__stories__/ProcessingIcon.story.js');
   require('../src/components/__stories__/EmptyPrompt.story.js');
+  require('../src/components/__stories__/Modal.story.js');
   // You can require as many stories as you need.
 }
 

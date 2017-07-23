@@ -1,7 +1,8 @@
 export const palette = {
-  clearBlue: '#2979ff', // the blue
-  jadeGreen: '#2cb370', // the green
-  dark: '#1c272c', // the dark dark greeny black
+  // main brand colours
+  clearBlue: '#2979ff',
+  jadeGreen: '#2cb370',
+  dark: '#1c272c',
   // variants
   cloudyBlue: '#b0bed6',
   darkSkyBlue: '#4a90e2',
@@ -11,10 +12,10 @@ export const palette = {
   // when we have N greys, name appropriately
   grey: '#e3e5e5',
   // grey: '#b5b5b9'
+  // generic warning / error
   red: '#d62c41',
   orange: '#f5a623',
 };
-
 
 export const typography = {
   fontFamily: 'Montserrat, sans-serif',
