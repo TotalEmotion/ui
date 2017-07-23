@@ -7,7 +7,7 @@ storiesOf('Media Hero', module)
     return (
       <div>
         <MediaHero
-          mediaSrc="//placebeyonce.com/1200-350"
+          mediaSrc="//placebeyonce.com/1920-1080"
           title="Maui By Air The Best Way Around The Island"
           date="08 Jun 2017"
         />

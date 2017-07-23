@@ -12,30 +12,24 @@ import longhand from '@team-griffin/css-longhand';
 import { palette } from '../constants/css';
 import color from 'color';
 
+const overlayColor = color(palette.tertiaryLight).alpha(0.6);
+
 const stylesheet = (props) => reactCSS({
   default: {
     root: {
       ...cssSides('padding', Side.Y, 50),
+      ...longhand('background', {
+        size: 'cover',
+        repeat: 'no-repeat',
+        image: `
+          linear-gradient(${overlayColor}, ${overlayColor}),
+          url(${props.mediaSrc})
+        `,
+      }),
       overflow: 'hidden',
       position: 'relative',
       minHeight: 300,
       textAlign: 'center',
-    },
-    image: {
-      position: 'absolute',
-      top: 0,
-      left: '50%',
-      transform: 'translateX(-50%)',
-      zIndex: -1,
-    },
-    overlay: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      zIndex: -1,
-      backgroundColor: color(palette.tertiaryLight).alpha(0.6),
     },
     playButton: {
       position: 'relative',
@@ -121,18 +115,11 @@ const PlayButton = compose(
 
 export const PureMediaHero = ({
   styles,
-  mediaSrc,
   title,
   date,
   handlePlayClick,
 }) => (
   <div style={styles.root}>
-    <img
-      src={mediaSrc}
-      alt={title}
-      style={styles.image}
-    />
-    <span style={styles.overlay}/>
     <PlayButton
       onClick={handlePlayClick}
     />
