@@ -10,6 +10,7 @@ import {
 } from 'recompose';
 import { palette } from '../constants/css';
 import cssSides, { Side } from '@team-griffin/css-sides';
+import longhand from '@team-griffin/css-longhand';
 import r from 'ramda';
 import color from 'color';
 
@@ -27,8 +28,11 @@ const stylesheet = (props) => reactCSS({
       position: 'relative',
       display: 'inline-flex',
       cursor: 'pointer',
-      borderWidth: 0,
-      borderRadius: 50,
+      ...longhand('border', {
+        width: 1,
+        style: 'solid',
+        radius: 50,
+      }),
       lineHeight: 1,
       textTransform: 'uppercase',
       alignItems: 'center',
@@ -38,7 +42,7 @@ const stylesheet = (props) => reactCSS({
       fontSize: 12,
       fontWeight: 600,
       WebkitFontSmoothing: 'antialiased',
-      transition: 'background-color 0.2s ease-in-out',
+      transition: 'color 0.2s ease-in-out, background-color 0.2s ease-in-out',
     },
   },
   hover: {
@@ -49,27 +53,39 @@ const stylesheet = (props) => reactCSS({
           color(palette.jadeGreen).lighten(0.2)
         ) ],
         [ r.equals(Kind.SECONDARY), r.always(
-          color(palette.clearBlue).lighten(0.1)
+          'transparent'
+        ) ],
+        [ r.equals(Kind.DETRIMENTAL), r.always(
+          color(palette.red).lighten(0.2)
         ) ],
         [ r.T, r.always(color(palette.jadeGreen).lighten(0.2)) ],
+      ])(props.kind),
+      color: r.cond([
+        [ r.equals(Kind.SECONDARY), r.always(
+          color(palette.cloudyBlue).darken(0.2)
+        ) ],
+        [ r.T, r.always('#ffffff') ],
       ])(props.kind),
     },
   },
   primary: {
     root: {
       backgroundColor: palette.jadeGreen,
+      borderColor: palette.jadeGreen,
       color: '#fff',
     },
   },
   secondary: {
     root: {
-      backgroundColor: palette.clearBlue,
-      color: '#fff',
+      backgroundColor: 'transparent',
+      borderColor: palette.cloudyBlue,
+      color: palette.cloudyBlue,
     },
   },
   detrimental: {
     root: {
       backgroundColor: palette.red,
+      borderColor: palette.red,
       color: '#fff',
     },
   },

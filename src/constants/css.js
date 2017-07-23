@@ -3,6 +3,7 @@ export const palette = {
   jadeGreen: '#2cb370', // the green
   dark: '#1c272c', // the dark dark greeny black
   // variants
+  cloudyBlue: '#b0bed6',
   darkSkyBlue: '#4a90e2',
   darkSlateBlue: '#1e3b6b',
   // gradients
