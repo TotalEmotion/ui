@@ -7,10 +7,14 @@ export const palette = {
   cloudyBlue: '#b0bed6',
   darkSkyBlue: '#4a90e2',
   darkSlateBlue: '#1e3b6b',
+  powderBlue: '#c2d9ff',
+  iceBlue: '#f0f6ff',
   // gradients
   sapphire: '#2020a0',
   // when we have N greys, name appropriately
   grey: '#e3e5e5',
+  lightGrey: '#f7f8f8',
+  greyishBrown: '#555555',
   // grey: '#b5b5b9'
   // generic warning / error
   red: '#d62c41',

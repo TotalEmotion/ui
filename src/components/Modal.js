@@ -8,17 +8,20 @@ import {
 import reactCSS from 'reactcss';
 import { Style } from 'radium';
 import Modal from 'react-modal';
+import ModalHeader from './ModalHeader';
+import ModalFooter from './ModalFooter';
 import cssSides, { Side } from '@team-griffin/css-sides';
 import longhand from '@team-griffin/css-longhand';
 import { palette } from '../constants/css';
 import color from 'color';
 import r from 'ramda';
+import rA from 'ramda-adjunct/lib';
 
 const stylesheet = () => reactCSS({
   // https://github.com/reactjs/react-modal#styles
   default: {
     overlay: {
-      // styles need to be handled in the radium <Style/>
+      // styles need to be handled in radium <Style/>
       // as we need to hook into the react-modal CSS classes
       // to do the transitions
       backgroundColor: null,
@@ -26,6 +29,9 @@ const stylesheet = () => reactCSS({
       overflowY: 'scroll',
     },
     content: {
+      // flex as ModalFooter requires anchoring to bottom
+      display: 'flex',
+      flexDirection: 'column',
       boxShadow: `0 0 20px 0 ${palette.dark}`,
       ...longhand('border', {
         width: 0,
@@ -33,7 +39,20 @@ const stylesheet = () => reactCSS({
       }),
       ...cssSides('padding', Side.A, 0),
       backgroundColor: '#ffffff',
-      marginBottom: 40, // allow for scroll
+    },
+    // if header and footer provided at props level for <Modal>
+    // then we use a pre-formatted body wiht padding
+    body: {
+      ...longhand('padding', {
+        top: 30,
+        left: 30,
+        right: 30,
+        bottom: 50,
+      }),
+      fontWeight: 300,
+      fontSize: 18,
+      lineHeight: 1.39,
+      color: palette.greyishBrown,
     },
   },
 });
@@ -42,7 +61,7 @@ const stylesheet = () => reactCSS({
 // We still adhere to the reactCSS naming convention but this is just a
 // function that returns an object
 const reactModalStylesheet = ({
-  outSpeed,
+  closeTimeoutMS,
 }) => {
   return {
     default: {
@@ -80,8 +99,8 @@ const reactModalStylesheet = ({
         transform: 'scale(0.95)',
         opacity: 0,
         transition: `
-          transform ${outSpeed}ms ease-in-out,
-          opacity ${outSpeed}ms ease-in-out
+          transform ${closeTimeoutMS}ms ease-in-out,
+          opacity ${closeTimeoutMS}ms ease-in-out
         `,
       },
     },
@@ -103,10 +122,18 @@ const createModalStyles = (stylesheet) => (
 );
 
 export const PureModal = ({
-  styles,
-  reactModalStyles,
   children,
+  styles,
+  hasHeaderAndFooter,
+  // react-modal
+  reactModalStyles,
   modalProps,
+  // header
+  title,
+  onCloseClick,
+  dismissible,
+  // footer
+  footer,
 }) => (
   <div>
     {reactModalStyles}
@@ -117,7 +144,33 @@ export const PureModal = ({
       }}
       {...modalProps}
     >
-      {children}
+      {r.when(
+        rA.isNotNil,
+        r.always(
+          <ModalHeader
+            onCloseClick={onCloseClick}
+            dismissible={dismissible}
+            title={title}
+          />
+        ),
+      )(title)}
+      {r.ifElse(
+        r.equals(true),
+        r.always(
+          <div style={styles.body}>
+            {children}
+          </div>
+        ),
+        r.always(children)
+      )(hasHeaderAndFooter)}
+      {r.when(
+        rA.isNotNil,
+        r.always(
+          <ModalFooter>
+            {footer}
+          </ModalFooter>
+        ),
+      )(footer)}
     </Modal>
   </div>
 );
@@ -129,7 +182,6 @@ export const enhance = compose(
     contentLabel: 'Modal',
     shouldCloseOnOverlayClick: true,
     closeTimeoutMS: 300,
-    outSpeed: 200,
   }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
@@ -141,8 +193,11 @@ export const enhance = compose(
       'closeTimeoutMS',
       'contentLabel',
       'shouldCloseOnOverlayClick',
-      'outSpeed',
     ], ownerProps),
+    hasHeaderAndFooter: r.all(rA.isNotNil)([
+      ownerProps.title,
+      ownerProps.footer,
+    ]),
   })),
 );
 
