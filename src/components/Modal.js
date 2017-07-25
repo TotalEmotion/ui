@@ -15,7 +15,7 @@ import longhand from '@team-griffin/css-longhand';
 import { palette } from '../constants/css';
 import color from 'color';
 import r from 'ramda';
-import rA from 'ramda-adjunct/lib';
+import rA from 'ramda-adjunct';
 
 const stylesheet = () => reactCSS({
   // https://github.com/reactjs/react-modal#styles

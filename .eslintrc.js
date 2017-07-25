@@ -25,6 +25,9 @@ module.exports = {
   //       'config': {
   //         'resolve': {
   //           'alias': {
+  //             'assets': resolve(__dirname, './src/assets'),
+  //             'constants': resolve(__dirname, './src/constants'),
+  //             'helpers': resolve(__dirname, './src/helpers'),
   //           }
   //         }
   //       }

@@ -10,7 +10,7 @@ import { InlineSVG } from '@team-griffin/react-inline-svg';
 import companyLogo from '!svg-inline-loader!../assets/logo-full.svg';
 import companyLogoBranded from '!svg-inline-loader!../assets/logo-full-branded.svg';
 import r from 'ramda';
-import rA from 'ramda-adjunct/lib';
+import rA from 'ramda-adjunct';
 
 const stylesheet = ({
   width,

@@ -6,9 +6,10 @@ import {
   withProps,
   withHandlers,
 } from 'recompose';
-import CompanyIcon from './CompanyIcon';
+import { InlineSVG } from '@team-griffin/react-inline-svg';
 import { Heading, H } from '@team-griffin/react-heading-section';
 import Button from './Button';
+import clapperIcon from '!svg-inline-loader!../assets/clapperboard-icon.svg';
 
 const stylesheet = () => reactCSS({
   default: {
@@ -17,6 +18,11 @@ const stylesheet = () => reactCSS({
       paddingTop: 60,
       paddingBottom: 40,
       textAlign: 'center',
+    },
+    icon: {
+      display: 'inline-block',
+      width: 78,
+      fill: '#a5b2b8',
     },
     title: {
       color: '#727a7d',
@@ -40,10 +46,11 @@ export const PureEmptyPrompt = ({
   handleButtonClick,
 }) => (
   <div style={styles.root}>
-    <CompanyIcon
-      size={48}
-      fill="#a5b2b8"
-    />
+    <span style={styles.icon}>
+      <InlineSVG
+        src={clapperIcon}
+      />
+    </span>
     <Heading component={(
       <H style={styles.title}>
         {title}
