@@ -16,9 +16,11 @@ export const palette = {
   lightGrey: '#f7f8f8',
   greyishBrown: '#555555',
   // grey: '#b5b5b9'
+  orange: '#f5a623',
   // generic warning / error
   red: '#d62c41',
-  orange: '#f5a623',
+  amber: '#EBB723',
+  green: '#31B32C',
 };
 
 export const typography = {

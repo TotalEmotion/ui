@@ -8,6 +8,9 @@ import {
 } from 'recompose';
 import Label from './Label';
 import Input from './Input';
+import Notice from './Notice';
+import r from 'ramda';
+import rA from 'ramda-adjunct';
 
 const stylesheet = () => reactCSS({
   default: {
@@ -25,6 +28,8 @@ export const PureLabel = ({
   label,
   id,
   control,
+  notice,
+  status,
   ...inputProps
 }) => (
   <fieldset style={styles.root}>
@@ -36,7 +41,17 @@ export const PureLabel = ({
         id,
         ...inputProps,
       })}
+      {}
     </div>
+    {r.when(
+      rA.isNotNil,
+      r.always(
+        <Notice
+          status={status}
+          text={notice}
+        />
+      )
+    )(notice)}
   </fieldset>
 );
 

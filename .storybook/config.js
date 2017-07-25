@@ -24,7 +24,7 @@ addDecorator(function(getStory) {
     <StyleRoot>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Montserrat"
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600"
       />
       <style>
         {css}
@@ -53,6 +53,7 @@ function loadStories() {
   require('../src/components/__stories__/Input.story.js');
   require('../src/components/__stories__/Label.story.js');
   require('../src/components/__stories__/FormGroup.story.js');
+  require('../src/components/__stories__/Notice.story.js');
   require('../src/components/__stories__/Metric.story.js');
   require('../src/components/__stories__/Panel.story.js');
   require('../src/components/__stories__/Button.story.js');
