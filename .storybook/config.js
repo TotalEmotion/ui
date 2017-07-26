@@ -59,6 +59,7 @@ function loadStories() {
   require('../src/components/__stories__/Button.story.js');
   require('../src/components/__stories__/ReactiveButton.story.js');
   require('../src/components/__stories__/VideoCard.story.js');
+  require('../src/components/__stories__/VideoPreview.story.js');
   require('../src/components/__stories__/Footer.story.js');
   require('../src/components/__stories__/ProcessingIcon.story.js');
   require('../src/components/__stories__/EmptyPrompt.story.js');
