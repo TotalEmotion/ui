@@ -57,6 +57,7 @@
     "radium": "^0.19.1",
     "ramda": "^0.24.1",
     "ramda-adjunct": "^1.11.0",
+    "react-inline-transition-group": "^2.1.7",
     "react-matchmedia-connect": "^0.1.2",
     "react-modal": "^2.2.2",
     "reactcss": "^1.2.2",

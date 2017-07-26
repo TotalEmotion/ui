@@ -5297,6 +5297,14 @@ react-html-attributes@^1.3.0:
   dependencies:
     html-element-attributes "^1.0.0"
 
+react-inline-transition-group@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/react-inline-transition-group/-/react-inline-transition-group-2.1.7.tgz#a9682698f9677b82cd55f3d72cb3ace1cf4fbea2"
+  dependencies:
+    create-react-class "^15.5.2"
+    prop-types "^15.5.8"
+    react-transition-hooks "^1.1.1"
+
 react-inspector@^2.0.0, react-inspector@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-2.1.1.tgz#2e68030d7ef0811a012f167258dd84232fd5ead1"
@@ -5384,6 +5392,13 @@ react-textarea-autosize@^4.3.0:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-4.3.2.tgz#962a52c68caceae408c18acecec29049b81e42fa"
   dependencies:
+    prop-types "^15.5.8"
+
+react-transition-hooks@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-transition-hooks/-/react-transition-hooks-1.1.1.tgz#e3042118ab3c9607391bc5fe79b72a989101b457"
+  dependencies:
+    create-react-class "^15.5.2"
     prop-types "^15.5.8"
 
 react@^15.6.1:
