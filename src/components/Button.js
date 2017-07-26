@@ -109,7 +109,7 @@ export const PureButton = ({
 );
 
 export const enhance = compose(
-  setDisplayName('Progress'),
+  setDisplayName('Button'),
   setPropTypes({
     kind: PropTypes.oneOf(r.values(Kind)),
   }),
