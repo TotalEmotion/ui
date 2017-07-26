@@ -13,6 +13,7 @@ storiesOf('Animated Grid', module)
           items={[
             <VideoCard
               key="1"
+              selectable={selectable}
               selected={boolean('Maui selected', false)}
               mediaSrc={'//placebeyonce.com/500-200'}
               title="Maui By Air The Best Way Around The Island"

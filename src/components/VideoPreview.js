@@ -8,7 +8,6 @@ import {
 } from 'recompose';
 import longhand from '@team-griffin/css-longhand';
 import { palette } from '../constants/css';
-import color from 'color';
 import r from 'ramda';
 
 const stylesheet = (props) => reactCSS({
@@ -51,7 +50,7 @@ const stylesheet = (props) => reactCSS({
     r.prop('src'),
     r.length,
     r.gt(r.__, 10), // e.g fo.co/r.jpg
-  )(props)
+  )(props),
 });
 
 export const PureVideoPreview = ({

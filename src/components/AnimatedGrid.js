@@ -15,9 +15,6 @@ const stylesheet = () => reactCSS({
   default: {
     root: {
     },
-    transition: {
-
-    },
     transitionBase: {
       // to remain full height with grid siblings
       flex: 1,

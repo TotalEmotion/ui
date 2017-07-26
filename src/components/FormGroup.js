@@ -56,7 +56,7 @@ export const PureLabel = ({
 );
 
 export const enhance = compose(
-  setDisplayName('Label'),
+  setDisplayName('FormGroup'),
   defaultProps({
     control: Input,
   }),
