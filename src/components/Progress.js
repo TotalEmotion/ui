@@ -7,10 +7,12 @@ import {
   withProps,
 } from 'recompose';
 import { palette } from '../constants/css';
+import r from 'ramda';
 
 const stylesheet = ({
   value,
   max,
+  disabled,
 }) => reactCSS({
   default: {
     root: {
@@ -34,6 +36,13 @@ const stylesheet = ({
       transition: '0.3s width ease-in-out',
     },
   },
+  muted: {
+    progress: {
+      backgroundColor: palette.coolGrey,
+    },
+  },
+}, {
+  muted: r.equals(disabled, true),
 });
 
 export const PureProgress = ({
@@ -49,6 +58,7 @@ export const enhance = compose(
   defaultProps({
     value: 0,
     max: 100,
+    disabled: false,
   }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),

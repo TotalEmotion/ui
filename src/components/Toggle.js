@@ -46,7 +46,7 @@ const stylesheet = ({
   off: {
     switch: {
       left: 0,
-      backgroundColor: '#aab2b5',
+      backgroundColor: palette.coolGrey,
     },
   },
 }, {
