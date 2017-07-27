@@ -95,17 +95,32 @@ const stylesheet = (props) => reactCSS({
   detrimental: r.equals(props.kind, Kind.DETRIMENTAL),
 }, props);
 
-export const PureButton = ({
-  styles,
-  children,
-  buttonProps,
-}) => (
-  <button
-    style={styles.root}
-    {...buttonProps}
-  >
-    {children}
-  </button>
+export const PureButton = r.ifElse(
+  r.propEq('component', 'a'),
+  ({
+    styles,
+    children,
+    linkProps,
+  }) => (
+    <a
+      style={styles.root}
+      {...linkProps}
+    >
+      {children}
+    </a>
+  ),
+  ({
+    styles,
+    children,
+    buttonProps,
+  }) => (
+    <button
+      style={styles.root}
+      {...buttonProps}
+    >
+      {children}
+    </button>
+  ),
 );
 
 export const enhance = compose(
@@ -116,6 +131,7 @@ export const enhance = compose(
   defaultProps({
     kind: Kind.PRIMARY,
     type: 'button',
+    component: 'button',
   }),
   hover,
   withProps((ownerProps) => ({
@@ -123,7 +139,13 @@ export const enhance = compose(
     buttonProps: r.omit([
       'hover',
       'kind',
+      'component',
     ], ownerProps),
+  })),
+  withProps((ownerProps) => ({
+    linkProps: r.omit([
+      'type',
+    ], ownerProps.buttonProps),
   })),
 );
 

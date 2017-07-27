@@ -15,4 +15,17 @@ storiesOf('Button', module)
         </Button>
       </div>
     );
+  })
+  .add('as a link', () => {
+    return (
+      <div style={{padding: 20}}>
+        <Button
+          component="a"
+          kind={select('Kind', Kind, Kind.PRIMARY)}
+          href="emotionreader.io"
+        >
+          {'I\'m an <a> tag'}
+        </Button>
+      </div>
+    );
   });
