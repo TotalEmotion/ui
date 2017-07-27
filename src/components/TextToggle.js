@@ -25,7 +25,6 @@ const stylesheet = ({
 }) => reactCSS({
   default: {
     root: {
-      ...cssSides('padding', Side.X, 10),
       ...cssSides('padding', Side.Y, 15),
       ...cssSides('margin', Side.X, 25),
       ...longhand('border', {
@@ -37,7 +36,6 @@ const stylesheet = ({
       color: '#555555',
       fontSize: 14,
       lineHeight: 1,
-      minWidth: 90,
       textTransform: 'uppercase',
       fontWeight: 600,
       textAlign: 'center',
