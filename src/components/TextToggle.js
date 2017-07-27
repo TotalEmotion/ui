@@ -34,7 +34,7 @@ const stylesheet = ({
       }),
       marginBottom: 0,
       cursor: 'pointer',
-      color: '#555555',
+      color: palette.greyishBrown,
       fontSize: 14,
       lineHeight: 1,
       textTransform: 'uppercase',
@@ -63,6 +63,7 @@ const stylesheet = ({
   off: {
     root: {
       opacity: 0.5,
+      color: palette.gunmetal,
     },
   },
 }, {
