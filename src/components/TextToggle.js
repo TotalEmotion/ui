@@ -32,6 +32,7 @@ const stylesheet = ({
         bottomStyle: 'solid',
         bottomColor: 'transparent',
       }),
+      marginBottom: 0,
       cursor: 'pointer',
       color: '#555555',
       fontSize: 14,
