@@ -167,7 +167,7 @@
     "@team-griffin/css-longhand" "^0.1.0"
     lodash.reduce "^4.6.0"
 
-"@team-griffin/eslint-config@^3.0.1":
+"@team-griffin/eslint-config@^3.0.0":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@team-griffin/eslint-config/-/eslint-config-3.0.1.tgz#a100a64efa0d70e16fdc9c0c615b2d7de79c05b6"
   dependencies:

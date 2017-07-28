@@ -47,6 +47,7 @@ const stylesheet = (props) => reactCSS({
   },
   hover: {
     root: {
+      textDecoration: 'none',
       // since the hover state can be different depending on the kind
       backgroundColor: r.cond([
         [ r.equals(Kind.PRIMARY), r.always(

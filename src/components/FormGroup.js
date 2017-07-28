@@ -41,7 +41,6 @@ export const PureLabel = ({
         id,
         ...inputProps,
       })}
-      {}
     </div>
     {r.when(
       rA.isNotNil,
