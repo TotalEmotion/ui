@@ -5,12 +5,13 @@ import {
   setDisplayName,
   withProps,
 } from 'recompose';
+import { palette } from '../constants/css';
 
 const stylesheet = () => reactCSS({
   default: {
     root: {
-      color: '#596e78',
-      fontSize: 12,
+      color: palette.slate,
+      fontSize: 13,
       fontWeight: 600,
       cursor: 'pointer',
       marginBottom: 0,

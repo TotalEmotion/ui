@@ -15,8 +15,10 @@ export const palette = {
   grey: '#e3e5e5',
   lightGrey: '#f7f8f8',
   coolGrey: '#a5b2b8',
+  slate: '#4e646f',
   greyishBrown: '#555555',
   gunmetal: '#686868',
+  battleshipGrey: '#727a7d',
   // grey: '#b5b5b9'
   orange: '#f5a623',
   // generic warning / error
