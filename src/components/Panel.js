@@ -22,6 +22,7 @@ const stylesheet = ({
         color: '#eae8f5',
         style: 'solid',
       }),
+      backgroundColor: '#ffffff',
     },
   },
   fullBleed: {
