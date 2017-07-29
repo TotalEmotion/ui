@@ -33,6 +33,7 @@ const stylesheet = (props) => reactCSS({
         style: 'solid',
         radius: 50,
       }),
+      minWidth: '8em', // for loading state
       lineHeight: 1,
       textTransform: 'uppercase',
       alignItems: 'center',

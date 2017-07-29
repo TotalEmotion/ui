@@ -60,7 +60,8 @@ const stylesheet = (props) => {
         position: 'absolute',
         top: '50%',
         left: '50%',
-        transform: 'translate(-50%, -50%)',
+        marginTop: '-0.5em',
+        marginLeft: '-3em',
       },
 
       loaderDot1: loaderDotStyles,
