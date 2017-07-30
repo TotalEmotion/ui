@@ -9,6 +9,7 @@ import {
 import { createResponsiveConnect } from 'react-matchmedia-connect';
 import { breakpoints, typography } from '../constants/css';
 import r from 'ramda';
+import { NavLink } from 'react-router-dom'
 
 const linkStyles = {
   color: 'rgba(255, 255, 255, 0.4)',
@@ -104,12 +105,12 @@ export const PureNavigationLink = r.ifElse(
     href,
     text,
   }) => (
-    <a
-      href={href}
+    <NavLink
+      to={href}
       style={styles.anchor}
     >
       {text}
-    </a>
+    </NavLink>
   )
 );
 
