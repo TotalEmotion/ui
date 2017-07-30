@@ -1,8 +1,10 @@
 import React, { createElement } from 'react';
+import PropTypes from 'prop-types';
 import reactCSS from 'reactcss';
 import {
   compose,
   setDisplayName,
+  setPropTypes,
   defaultProps,
   withProps,
 } from 'recompose';
@@ -12,7 +14,7 @@ import Notice from './Notice';
 import r from 'ramda';
 import rA from 'ramda-adjunct';
 
-const stylesheet = () => reactCSS({
+const stylesheet = (props) => reactCSS({
   default: {
     root: {
       marginBottom: 25,
@@ -21,6 +23,13 @@ const stylesheet = () => reactCSS({
       marginTop: 10,
     },
   },
+  flush: {
+    root: {
+      marginBottom: 0,
+    },
+  },
+}, {
+  flush: props.flush,
 });
 
 export const PureLabel = ({
@@ -56,8 +65,16 @@ export const PureLabel = ({
 
 export const enhance = compose(
   setDisplayName('FormGroup'),
+  setPropTypes({
+    label: PropTypes.node,
+    control: PropTypes.element,
+    flush: PropTypes.bool,
+    status: PropTypes.string,
+    notice: PropTypes.string,
+  }),
   defaultProps({
     control: Input,
+    flush: false,
   }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),

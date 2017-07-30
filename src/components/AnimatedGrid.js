@@ -42,6 +42,7 @@ export const PureAnimatedGrid = ({
     <div className="row">
       {mapIndexed((item, i) => (
         <Transition
+          key={item.key}
           className={colClass}
           component="div"
           childrenStyles={{
@@ -54,7 +55,7 @@ export const PureAnimatedGrid = ({
             leave: styles.transitionLeave,
           }}
         >
-          <div key={item.key}>
+          <div>
             {item}
           </div>
         </Transition>

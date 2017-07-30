@@ -63,9 +63,11 @@ const stylesheet = (props) => reactCSS({
   },
   large: {
     content: {
-      left: 40,
+      width: '100%',
+      maxWidth: 800,
       top: 40,
-      right: 40,
+      left: '50%',
+      transform: 'translateX(-50%)',
       bottom: 'auto',
     },
   },
@@ -101,7 +103,6 @@ const reactModalStylesheet = ({
         transform: 'scale(1)',
         opacity: 1,
         transition: `
-          transform 300ms ease-in-out 100ms,
           opacity 300ms ease-in-out 100ms
         `,
       },
