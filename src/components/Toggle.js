@@ -27,7 +27,8 @@ const stylesheet = ({
     switch: {
       position: 'absolute',
       top: -5,
-      backgroundColor: palette.clearBlue,
+      left: 0,
+      backgroundColor: palette.coolGrey,
       width: 16,
       height: 16,
       borderRadius: 8,
@@ -41,17 +42,11 @@ const stylesheet = ({
   on: {
     switch: {
       left: 16,
-    },
-  },
-  off: {
-    switch: {
-      left: 0,
-      backgroundColor: palette.coolGrey,
+      backgroundColor: palette.clearBlue,
     },
   },
 }, {
   on: r.equals(on, true),
-  off: r.equals(on, false),
 });
 
 export const PureToggle = ({
