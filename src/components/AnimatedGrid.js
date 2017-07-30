@@ -24,7 +24,7 @@ const stylesheet = () => reactCSS({
     },
     transitionAppear: {
       opacity: 1,
-      transition: 'opacity 0.6s ease-in-out',
+      transition: 'opacity 0.5s ease-in-out',
     },
     transitionLeave: {
       opacity: 0,
@@ -49,7 +49,7 @@ export const PureAnimatedGrid = ({
               base: styles.transitionBase,
               appear: {
                 ...styles.transitionAppear,
-                transitionDelay: `${0.3 * i}s`,
+                transitionDelay: `${0.15 * i}s`,
               },
               enter: styles.transitionAppear,
               leave: styles.transitionLeave,
