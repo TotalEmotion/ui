@@ -67,6 +67,7 @@ const stylesheet = ({
         overflow: 'hidden',
         position: 'relative',
         height: 200,
+        backgroundColor: '#000',
       },
       image: {
         height: 200,

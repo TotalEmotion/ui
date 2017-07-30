@@ -39,28 +39,26 @@ export const PureAnimatedGrid = ({
   colClass,
 }) => (
   <div style={styles.root}>
-    <div className="container">
-      <div className="row">
-        {mapIndexed((item, i) => (
-          <Transition
-            className={colClass}
-            component="div"
-            childrenStyles={{
-              base: styles.transitionBase,
-              appear: {
-                ...styles.transitionAppear,
-                transitionDelay: `${0.15 * i}s`,
-              },
-              enter: styles.transitionAppear,
-              leave: styles.transitionLeave,
-            }}
-          >
-            <div key={item.key}>
-              {item}
-            </div>
-          </Transition>
-        ), items)}
-      </div>
+    <div className="row">
+      {mapIndexed((item, i) => (
+        <Transition
+          className={colClass}
+          component="div"
+          childrenStyles={{
+            base: styles.transitionBase,
+            appear: {
+              ...styles.transitionAppear,
+              transitionDelay: `${0.15 * i}s`,
+            },
+            enter: styles.transitionAppear,
+            leave: styles.transitionLeave,
+          }}
+        >
+          <div key={item.key}>
+            {item}
+          </div>
+        </Transition>
+      ), items)}
     </div>
   </div>
 );
