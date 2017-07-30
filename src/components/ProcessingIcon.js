@@ -116,6 +116,7 @@ const stylesheet = () => {
 
 export const PureProcessingIcon = ({
   styles,
+  text,
 }) => (
   <div style={styles.root}>
     <div style={styles.bubbleWrap}>
@@ -126,13 +127,16 @@ export const PureProcessingIcon = ({
         <CompanyIcon size={60}/>
       </div>
     </div>
-    <p style={styles.text}>{'Nearly there!'}</p>
+    <p style={styles.text}>{text}</p>
   </div>
 );
 
 export const enhance = compose(
   setDisplayName('ProcessingIcon'),
   radium,
+  defaultProps({
+    text: 'Nearly there!'
+  }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
   })),
