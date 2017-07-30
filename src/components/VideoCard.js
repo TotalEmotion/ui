@@ -69,6 +69,7 @@ const stylesheet = ({
         height: 200,
       },
       image: {
+        height: 200,
         position: 'absolute',
         top: 0,
         left: '50%',
