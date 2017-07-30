@@ -36,7 +36,7 @@ export const PureFooter = ({
         fill="#ffffff"
       />
     </div>
-    <p>{`\u00A9 ${year} All rights reserved &mdash; US patents pending.`}</p>
+    <p>{`\u00A9 ${year} All rights reserved \u2014 US patents pending.`}</p>
   </div>
 );
 

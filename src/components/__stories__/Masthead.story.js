@@ -6,7 +6,9 @@ import CompanyLogo from '../CompanyLogo';
 storiesOf('Masthead', module)
   .add('default', () => {
     return (
-      <Masthead/>
+      <Masthead>
+        Fill me with anything
+      </Masthead>
     );
   })
   .add('with content', () => {
@@ -15,6 +17,8 @@ storiesOf('Masthead', module)
         <div style={{
           marginLeft: 20,
           marginRight: 20,
+          paddingTop: 20,
+          paddingBottom: 20,
         }}
         >
           <CompanyLogo

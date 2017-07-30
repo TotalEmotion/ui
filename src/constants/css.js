@@ -9,7 +9,7 @@ export const palette = {
   darkSlateBlue: '#1e3b6b',
   powderBlue: '#c2d9ff',
   iceBlue: '#f0f6ff',
-  // gradients
+  veryLightPurple: '#f6f5fd',
   sapphire: '#2020a0',
   // when we have N greys, name appropriately
   grey: '#e3e5e5',
@@ -19,7 +19,6 @@ export const palette = {
   greyishBrown: '#555555',
   gunmetal: '#686868',
   battleshipGrey: '#727a7d',
-  // grey: '#b5b5b9'
   orange: '#f5a623',
   // generic warning / error
   red: '#d62c41',

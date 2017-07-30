@@ -17,8 +17,6 @@ const stylesheet = () => reactCSS({
           ${palette.sapphire}
         )
       `,
-      paddingTop: 45,
-      paddingBottom: 45,
     },
   },
 });
