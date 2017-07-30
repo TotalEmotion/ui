@@ -72,12 +72,12 @@ const PureCloseButton = r.ifElse(
   r.propEq('dismissible', true),
   ({
     styles,
-    onCloseClick,
+    onClick,
   }) => (
     <button
       style={styles.close}
       type="button"
-      onClick={onCloseClick}
+      onClick={onClick}
     >
       {/* × */}
       <span>{'\u00D7'}</span>
