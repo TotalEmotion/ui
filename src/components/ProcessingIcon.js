@@ -4,6 +4,7 @@ import radium from 'radium';
 import {
   compose,
   setDisplayName,
+  defaultProps,
   withProps,
 } from 'recompose';
 import CompanyIcon from './CompanyIcon';
