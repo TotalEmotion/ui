@@ -12,12 +12,13 @@ import ModalHeader from './ModalHeader';
 import ModalFooter from './ModalFooter';
 import cssSides, { Side } from '@team-griffin/css-sides';
 import longhand from '@team-griffin/css-longhand';
-import { palette } from '../constants/css';
+import { createResponsiveConnect } from 'react-matchmedia-connect';
+import { palette, breakpoints } from '../constants/css';
 import color from 'color';
 import r from 'ramda';
 import rA from 'ramda-adjunct';
 
-const stylesheet = () => reactCSS({
+const stylesheet = (props) => reactCSS({
   // https://github.com/reactjs/react-modal#styles
   default: {
     overlay: {
@@ -30,6 +31,11 @@ const stylesheet = () => reactCSS({
     },
     content: {
       // flex as ModalFooter requires anchoring to bottom
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      right: 0,
+      bottom: 0,
       display: 'flex',
       flexDirection: 'column',
       boxShadow: `0 0 20px 0 ${palette.dark}`,
@@ -55,7 +61,17 @@ const stylesheet = () => reactCSS({
       color: palette.greyishBrown,
     },
   },
-});
+  large: {
+    content: {
+      left: 40,
+      top: 40,
+      right: 40,
+      bottom: 'auto',
+    },
+  },
+}, {
+  large: props.isMinSm,
+}, props);
 
 // Separate stylesheet to handle making the 'pure css/classes' version
 // We still adhere to the reactCSS naming convention but this is just a
@@ -175,6 +191,8 @@ export const PureModal = ({
   </div>
 );
 
+const connect = createResponsiveConnect(breakpoints);
+
 export const enhance = compose(
   setDisplayName('Modal'),
   defaultProps({
@@ -183,6 +201,9 @@ export const enhance = compose(
     shouldCloseOnOverlayClick: true,
     closeTimeoutMS: 300,
   }),
+  connect([
+    'isMinSm',
+  ]),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
     reactModalStyles: createModalStyles(reactModalStylesheet(ownerProps)),
