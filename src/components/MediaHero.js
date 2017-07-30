@@ -145,8 +145,7 @@ export const enhance = compose(
   withHandlers({
     handlePlayClick: ({
       onPlayClick,
-      videoSrc,
-    }) => () => onPlayClick(videoSrc),
+    }) => () => onPlayClick(),
   }),
 );
 
