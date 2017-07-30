@@ -66,11 +66,11 @@ const stylesheet = ({
       media: {
         overflow: 'hidden',
         position: 'relative',
-        height: 200,
+        height: 180,
         backgroundColor: '#000',
       },
       image: {
-        height: 200,
+        height: 180,
         position: 'absolute',
         top: 0,
         left: '50%',
