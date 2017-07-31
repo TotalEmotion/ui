@@ -41,6 +41,7 @@ const stylesheet = (props) => reactCSS({
       fontSize: 14,
       lineHeight: 1,
       fontWeight: 600,
+      textDecoration: 'none',
       transition: `
         border-bottom-color 0.2s ease-in-out,
         color 0.2s ease-in-out
@@ -60,11 +61,15 @@ const stylesheet = (props) => reactCSS({
     linkActive: {
       color: 'rgba(255, 255, 255, 1)',
       borderBottomColor: '#fff',
+      textDecoration: 'none',
     },
   },
   hover: {
     link: {
       color: 'rgba(255, 255, 255, 1)',
+      textDecoration: 'none',
+    },
+    linkActive: {
       textDecoration: 'none',
     },
   },
