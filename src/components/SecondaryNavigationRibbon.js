@@ -5,6 +5,7 @@ import {
   setDisplayName,
   withProps,
 } from 'recompose';
+import { NavLink } from 'react-router-dom';
 import { createResponsiveConnect } from 'react-matchmedia-connect';
 import { breakpoints, palette } from '../constants/css';
 import longhand from '@team-griffin/css-longhand';
@@ -27,13 +28,13 @@ const stylesheet = (props) => reactCSS({
       marginRight: -10,
       marginBottom: 0,
     },
-    link: {
+    navItem: {
       paddingLeft: 10,
       paddingRight: 10,
       textTransform: 'uppercase',
       WebkitFontSmoothing: 'antialiased',
     },
-    anchor: {
+    link: {
       display: 'block',
       color: 'rgba(255, 255, 255, 0.5)',
       cursor: 'pointer',
@@ -56,9 +57,13 @@ const stylesheet = (props) => reactCSS({
         style: 'solid',
       }),
     },
+    linkActive: {
+      color: 'rgba(255, 255, 255, 1)',
+      borderBottomColor: '#fff',
+    },
   },
   hover: {
-    anchor: {
+    link: {
       color: 'rgba(255, 255, 255, 1)',
       textDecoration: 'none',
     },
@@ -68,7 +73,7 @@ const stylesheet = (props) => reactCSS({
       marginRight: -15,
       marginLeft: -15,
     },
-    link: {
+    navItem: {
       paddingLeft: 15,
       paddingRight: 15,
     },
@@ -78,21 +83,14 @@ const stylesheet = (props) => reactCSS({
       marginLeft: -30,
       marginRight: -30,
     },
-    link: {
+    navItem: {
       paddingLeft: 30,
       paddingRight: 30,
-    },
-  },
-  active: {
-    anchor: {
-      color: 'rgba(255, 255, 255, 1)',
-      borderBottomColor: '#fff',
     },
   },
 }, {
   medium: props.isMinSm,
   large: props.isMinMd,
-  active: props.isActive,
 }, props);
 
 const PureSecondaryNavigationLink = ({
@@ -100,20 +98,18 @@ const PureSecondaryNavigationLink = ({
   href,
   text,
 }) => (
-  <a
-    href={href}
-    style={styles.anchor}
+  <NavLink
+    to={href}
+    style={styles.link}
+    activeStyle={styles.linkActive}
   >
     {text}
-  </a>
+  </NavLink>
 );
 
 export const SecondaryNavigationLink = compose(
   setDisplayName('SecondaryNavigationLink'),
   hover,
-  withProps((ownerProps) => ({
-    isActive: r.equals(ownerProps.active, true),
-  })),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
   })),
@@ -128,7 +124,7 @@ export const PureSecondaryNavigation = ({
       {r.map((link) => (
         <li
           key={link.href}
-          style={styles.link}
+          style={styles.navItem}
         >
           <SecondaryNavigationLink {...link}/>
         </li>

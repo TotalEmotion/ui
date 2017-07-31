@@ -9,7 +9,7 @@ import {
 import { createResponsiveConnect } from 'react-matchmedia-connect';
 import { breakpoints, typography } from '../constants/css';
 import r from 'ramda';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 const linkStyles = {
   color: 'rgba(255, 255, 255, 0.4)',

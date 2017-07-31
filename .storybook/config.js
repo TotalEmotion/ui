@@ -9,6 +9,10 @@ import {
   HeadingSection,
 } from '@team-griffin/react-heading-section';
 import { typography } from '../src/constants/css';
+import { Router } from 'react-router';
+import createBrowserHistory from 'history/createBrowserHistory';
+
+const history = createBrowserHistory();
 
 addDecorator(withKnobs);
 
@@ -21,21 +25,23 @@ body {
 addDecorator(function(getStory) {
   const story = getStory();
   return (
-    <StyleRoot>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600"
-      />
-      <style>
-        {css}
-        {fonts}
-      </style>
-      <HeadingRoot>
-        <HeadingSection>
-          {story}
-        </HeadingSection>
-      </HeadingRoot>
-    </StyleRoot>
+    <Router history={history}>
+      <StyleRoot>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600"
+        />
+        <style>
+          {css}
+          {fonts}
+        </style>
+        <HeadingRoot>
+          <HeadingSection>
+            {story}
+          </HeadingSection>
+        </HeadingRoot>
+      </StyleRoot>
+    </Router>
   );
 });
 
