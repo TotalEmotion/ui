@@ -24,7 +24,7 @@ const stylesheet = (props) => reactCSS({
   default: {
     root: {
       ...cssSides('padding', Side.X, 20),
-      ...cssSides('padding', Side.Y, 15),
+      ...cssSides('padding', Side.Y, 12),
       position: 'relative',
       display: 'inline-flex',
       cursor: 'pointer',

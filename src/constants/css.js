@@ -14,6 +14,7 @@ export const palette = {
   // when we have N greys, name appropriately
   grey: '#e3e5e5',
   lightGrey: '#f7f8f8',
+  paleGrey: '#eae8f2',
   coolGrey: '#a5b2b8',
   slate: '#4e646f',
   greyishBrown: '#555555',
