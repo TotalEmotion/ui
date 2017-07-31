@@ -14,14 +14,14 @@ const stylesheet = () => reactCSS({
     },
     name: {
       display: 'block',
-      fontSize: 12,
+      fontSize: 14,
       color: '#b5b5b9',
       marginBottom: 5,
     },
     result: {
       display: 'block',
       color: palette.darkSkyBlue,
-      fontSize: 36,
+      fontSize: 42,
       fontWeight: 600,
       lineHeight: 1,
     },
