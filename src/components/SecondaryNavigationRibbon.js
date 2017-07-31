@@ -17,7 +17,7 @@ const stylesheet = (props) => reactCSS({
       whiteSpace: 'nowrap',
       backgroundColor: palette.jadeGreen,
       color: '#ffffff',
-      overflow: 'hiden',
+      overflow: 'hidden',
     },
     links: {
       listStyle: 'none',
