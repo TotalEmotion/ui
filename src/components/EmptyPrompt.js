@@ -10,6 +10,8 @@ import { InlineSVG } from '@team-griffin/react-inline-svg';
 import { Heading, H } from '@team-griffin/react-heading-section';
 import Button from './Button';
 import clapperIcon from '!svg-inline-loader!../assets/clapperboard-icon.svg';
+import r from 'ramda';
+import rA from 'ramda-adjunct';
 
 const stylesheet = () => reactCSS({
   default: {
@@ -58,11 +60,16 @@ export const PureEmptyPrompt = ({
     )}
     />
     <p style={styles.text}>{text}</p>
-    <Button
-      onClick={handleButtonClick}
-    >
-      {buttonText}
-    </Button>
+    {r.when(
+      rA.isNotNil,
+      () => (
+        <Button
+          onClick={handleButtonClick}
+        >
+          {buttonText}
+        </Button>
+      )
+    )(buttonText)}
   </div>
 );
 
