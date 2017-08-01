@@ -48,7 +48,7 @@ export const PureLabel = ({
     <div style={styles.control}>
       {createElement(control, {
         id,
-        ...inputProps,
+        ...r.omit([ 'flush' ], inputProps),
       })}
     </div>
     {r.when(
