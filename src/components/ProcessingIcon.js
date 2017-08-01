@@ -10,13 +10,16 @@ import {
 import CompanyIcon from './CompanyIcon';
 import { palette } from '../constants/css';
 
-const stylesheet = () => {
+const stylesheet = ({
+  size,
+}) => {
   const bubble = {
     position: 'absolute',
     bottom: 0,
-    borderRadius: 30,
+    borderRadius: (size / 2),
     opacity: 0,
   };
+
   const bubble1Animation = radium.keyframes({
     '0%': {
       opacity: 0,
@@ -79,15 +82,15 @@ const stylesheet = () => {
         zIndex: 2, // appear above bubbles
       },
       bubbleWrap: {
-        paddingTop: 25,
-        marginBottom: 25,
+        paddingTop: (size / 2.5),
+        marginBottom: (size / 2.5),
         position: 'relative',
       },
       bubble1: {
         ...bubble,
         left: 0,
-        width: 8,
-        height: 8,
+        width: (size / 7.5),
+        height: (size / 7.5),
         backgroundColor: palette.sapphire,
         animation: 'x 1.6s ease 0s infinite',
         animationName: bubble1Animation,
@@ -96,8 +99,8 @@ const stylesheet = () => {
         ...bubble,
         left: '50%',
         marginLeft: -10,
-        width: 16,
-        height: 16,
+        width: (size / 3.75),
+        height: (size / 3.75),
         backgroundColor: '#ccdcfd',
         animation: 'x 2.1s ease 0.3s infinite',
         animationName: bubble2Animation,
@@ -105,11 +108,14 @@ const stylesheet = () => {
       bubble3: {
         ...bubble,
         right: 0,
-        width: 12,
-        height: 12,
+        width: (size / 5),
+        height: (size / 5),
         backgroundColor: '#4839d8',
         animation: 'x 1.9s ease 0.1s infinite',
         animationName: bubble3Animation,
+      },
+      text: {
+        color: palette.coolGrey,
       },
     },
   });
@@ -118,6 +124,7 @@ const stylesheet = () => {
 export const PureProcessingIcon = ({
   styles,
   text,
+  size,
 }) => (
   <div style={styles.root}>
     <div style={styles.bubbleWrap}>
@@ -125,7 +132,7 @@ export const PureProcessingIcon = ({
       <span style={styles.bubble2}/>
       <span style={styles.bubble3}/>
       <div style={styles.icon}>
-        <CompanyIcon size={60}/>
+        <CompanyIcon size={size}/>
       </div>
     </div>
     <p style={styles.text}>{text}</p>
@@ -136,7 +143,8 @@ export const enhance = compose(
   setDisplayName('ProcessingIcon'),
   radium,
   defaultProps({
-    text: 'Nearly there!'
+    text: 'Nearly there!',
+    size: 60,
   }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
