@@ -9,9 +9,7 @@ import {
 import r from 'ramda';
 import { palette } from '../constants/css';
 
-const stylesheet = ({
-  on,
-}) => reactCSS({
+const stylesheet = (props) => reactCSS({
   default: {
     root: {
       display: 'block',
@@ -45,9 +43,15 @@ const stylesheet = ({
       backgroundColor: palette.clearBlue,
     },
   },
+  disabled: {
+    switch: {
+      cursor: 'not-allowed',
+    },
+  },
 }, {
-  on: r.equals(on, true),
-});
+  on: r.equals(props.on, true),
+  disabled: r.equals(props.disabled, true),
+}, props);
 
 export const PureToggle = ({
   styles,
