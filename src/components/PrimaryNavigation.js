@@ -67,7 +67,7 @@ const stylesheet = (props) => reactCSS({
       marginLeft: -30,
       marginRight: -30,
     },
-    link: {
+    linkWrapper: {
       paddingLeft: 30,
       paddingRight: 30,
     },
