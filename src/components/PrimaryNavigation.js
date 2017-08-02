@@ -1,26 +1,15 @@
-import React from 'react';
+import React, { cloneElement } from 'react';
+import PropTypes from 'prop-types';
 import reactCSS, { hover } from 'reactcss';
 import {
   compose,
   setDisplayName,
   withProps,
-  withHandlers,
+  setPropTypes,
 } from 'recompose';
 import { createResponsiveConnect } from 'react-matchmedia-connect';
 import { breakpoints, typography } from '../constants/css';
 import r from 'ramda';
-import { NavLink } from 'react-router-dom';
-
-const linkStyles = {
-  color: 'rgba(255, 255, 255, 0.4)',
-  cursor: 'pointer',
-  fontSize: 14,
-  fontWeight: 600,
-  lineHeight: 1,
-  transition: 'color 0.2s ease-in-out',
-  outline: 0,
-  textTransform: 'uppercase',
-};
 
 const stylesheet = (props) => reactCSS({
   default: {
@@ -36,15 +25,21 @@ const stylesheet = (props) => reactCSS({
       marginRight: -10,
       marginBottom: 0,
     },
-    link: {
+    linkWrapper: {
       paddingLeft: 10,
       paddingRight: 10,
       textTransform: 'uppercase',
       WebkitFontSmoothing: 'antialiased',
     },
-    anchor: linkStyles,
-    button: {
-      ...linkStyles,
+    link: {
+      color: 'rgba(255, 255, 255, 0.4)',
+      cursor: 'pointer',
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1,
+      transition: 'color 0.2s ease-in-out',
+      outline: 0,
+      textTransform: 'uppercase',
       fontFamily: typography.fontFamily,
       backgroundColor: 'transparent',
       borderWidth: 0,
@@ -52,12 +47,9 @@ const stylesheet = (props) => reactCSS({
     },
   },
   hover: {
-    anchor: {
+    link: {
       color: 'rgba(255, 255, 255, 0.5)',
       textDecoration: 'none',
-    },
-    button: {
-      color: 'rgba(255, 255, 255, 0.5)',
     },
   },
   medium: {
@@ -65,7 +57,7 @@ const stylesheet = (props) => reactCSS({
       marginRight: -15,
       marginLeft: -15,
     },
-    link: {
+    linkWrapper: {
       paddingLeft: 15,
       paddingRight: 15,
     },
@@ -85,52 +77,20 @@ const stylesheet = (props) => reactCSS({
   large: props.isMinMd,
 }, props);
 
-export const PureNavigationLink = r.ifElse(
-  r.propEq('component', 'button'),
-  ({
-    styles,
-    handleClick,
-    text,
-  }) => (
-    <button
-      type="button"
-      onClick={handleClick}
-      style={styles.button}
-    >
-      {text}
-    </button>
-  ),
-  ({
-    styles,
-    href,
-    text,
-  }) => (
-    <NavLink
-      to={href}
-      style={styles.anchor}
-    >
-      {text}
-    </NavLink>
-  )
-);
+export const PureNavigationItem = ({
+  link,
+  styles,
+}) => cloneElement(link, {
+  style: styles.link,
+});
 
 export const NavigationItem = compose(
-  setDisplayName('NavigationLink'),
+  setDisplayName('NavigationItem'),
   hover,
   withProps((ownerProps) => ({
-    component: r.ifElse(
-      r.isNil,
-      r.always('a'),
-      r.always('button'),
-    )(ownerProps.onClick),
     styles: stylesheet(ownerProps),
   })),
-  withHandlers({
-    handleClick: ({
-      onClick,
-    }) => () => onClick(),
-  }),
-)(PureNavigationLink);
+)(PureNavigationItem);
 
 export const PurePrimaryNavigation = ({
   styles,
@@ -140,12 +100,10 @@ export const PurePrimaryNavigation = ({
     <ul style={styles.links}>
       {r.map((link) => (
         <li
-          key={link.href}
-          style={styles.link}
+          key={link.key}
+          style={styles.linkWrapper}
         >
-          <NavigationItem
-            {...link}
-          />
+          <NavigationItem link={link}/>
         </li>
       ), links)}
     </ul>
@@ -160,6 +118,14 @@ export const enhance = compose(
     'isMinSm',
     'isMinMd',
   ]),
+  setPropTypes({
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        key: PropTypes.string.isRequired,
+        $$typeof: PropTypes.symbol.isRequired,
+      }),
+    ),
+  }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
   })),

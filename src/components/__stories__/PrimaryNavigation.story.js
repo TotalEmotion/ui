@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import PrimaryNavigation from '../PrimaryNavigation';
+import Button from '../Button';
 
 storiesOf('Primary Navigation', module)
   .add('default', () => {
@@ -8,19 +9,9 @@ storiesOf('Primary Navigation', module)
       <div style={{ background: '#444', padding: 20}}>
         <PrimaryNavigation
           links={[
-            {
-              href: '/videos',
-              text: 'Videos',
-            },
-            {
-              href: '/account',
-              text: 'My Account',
-            },
-            {
-              href: '/logout',
-              text: 'Log Out',
-              onClick: () => console.log('log out'),
-            },
+            (<a key="foo">ddd</a>),
+            (<a key="2" href="/account">Account</a>),
+            (<Button key="3" onClick={() => console.log('out')}>Log out</Button>)
           ]}
         />
       </div>

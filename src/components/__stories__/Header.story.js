@@ -8,19 +8,9 @@ storiesOf('Header', module)
       <Header
         logoSize={40}
         links={[
-          {
-            href: '/videos',
-            text: 'Videos',
-          },
-          {
-            href: '/account',
-            text: 'My Account',
-          },
-          {
-            href: '/logout',
-            text: 'Log Out',
-            onClick: () => console.log('log out'),
-          },
+          (<a key="1" href="/videos">Videos</a>),
+          (<a key="2" href="/account">Account</a>),
+          (<button key="3" onClick={() => console.log('out')}>Log out</button>)
         ]}
       />
     );
