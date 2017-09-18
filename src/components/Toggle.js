@@ -40,7 +40,7 @@ const stylesheet = (props) => reactCSS({
   on: {
     switch: {
       left: 16,
-      backgroundColor: palette.clearBlue,
+      backgroundColor: palette.jadeGreen,
     },
   },
   disabled: {

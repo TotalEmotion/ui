@@ -56,6 +56,7 @@ function loadStories() {
   require('../src/components/__stories__/Toggle.story.js');
   require('../src/components/__stories__/TextToggle.story.js');
   require('../src/components/__stories__/Progress.story.js');
+  require('../src/components/__stories__/Donut.story.js');
   require('../src/components/__stories__/Input.story.js');
   require('../src/components/__stories__/Label.story.js');
   require('../src/components/__stories__/FormGroup.story.js');

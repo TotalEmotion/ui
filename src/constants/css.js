@@ -7,10 +7,13 @@ export const palette = {
   cloudyBlue: '#b0bed6',
   darkSkyBlue: '#4a90e2',
   darkSlateBlue: '#1e3b6b',
+  dodgerBlue: '#3983ff',
   powderBlue: '#c2d9ff',
   iceBlue: '#f0f6ff',
   veryLightPurple: '#f6f5fd',
   sapphire: '#2020a0',
+  donutBlue: '#2447ca',
+  biscay: '#1e3b6b',
   // when we have N greys, name appropriately
   grey: '#e3e5e5',
   lightGrey: '#f7f8f8',
