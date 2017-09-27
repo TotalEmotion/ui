@@ -13,7 +13,7 @@ import r from 'ramda';
 const stylesheet = (props) => reactCSS({
   default: {
     root: {
-      ...cssSides('padding', Side.A, 18),
+      ...cssSides('padding', Side.A, 10),
       ...longhand('border', {
         width: 1,
         style: 'solid',

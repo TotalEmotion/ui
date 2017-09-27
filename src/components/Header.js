@@ -43,6 +43,9 @@ const stylesheet = ({
       ...cssSides('padding', Side.Y, 45),
     },
     nav: {
+      justifyContent: 'center',
+    },
+    user: {
       justifyContent: 'flex-end',
     },
     logo: {
@@ -64,7 +67,7 @@ export const PureHeader = ({
     <header style={styles.root}>
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div style={styles.logo}>
               <CompanyLogo
                 height={logoSize}
@@ -72,11 +75,16 @@ export const PureHeader = ({
               />
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div style={styles.nav}>
               <PrimaryNavigation
                 links={links}
               />
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div style={styles.user}>
+              
             </div>
           </div>
         </div>

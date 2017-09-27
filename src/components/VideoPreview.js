@@ -13,32 +13,21 @@ import r from 'ramda';
 const stylesheet = (props) => reactCSS({
   default: {
     root: {
+      backgroundImage: `
+        linear-gradient(${palette.lightGrey}, ${palette.lightGrey})
+      `,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      transition: 'background-image 0.3s ease-in-out',
+    },
+  },
+  withImage: {
+    root: {
       ...longhand('border', {
         width: 1,
         color: palette.cloudyBlue,
         style: 'solid',
       }),
-      backgroundImage: `
-        linear-gradient(${palette.lightGrey}, ${palette.lightGrey})
-      `,
-      color: palette.coolGrey,
-      display: 'flex',
-      height: '100%',
-      width: '100%',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      transition: 'background-image 0.3s ease-in-out',
-    },
-    text: {
-      opacity: 1,
-      transition: 'opacity 1s ease-in-out',
-      fontSize: 16,
-    },
-  },
-  withImage: {
-    root: {
       backgroundImage: `url(${props.src}`,
     },
     text: {
@@ -56,11 +45,7 @@ const stylesheet = (props) => reactCSS({
 export const PureVideoPreview = ({
   styles,
 }) => (
-  <div style={styles.root}>
-    <span style={styles.text}>
-      {'Video preview'}
-    </span>
-  </div>
+  <div style={styles.root}/>
 );
 
 export const enhance = compose(

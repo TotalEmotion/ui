@@ -16,6 +16,7 @@ import color from 'color';
 
 export const Kind = {
   PRIMARY: 'PRIMARY',
+  PRIMARY_ALT: 'PRIMARY_ALT',
   SECONDARY: 'SECONDARY',
   DETRIMENTAL: 'DETRIMENTAL',
 };
@@ -54,6 +55,9 @@ const stylesheet = (props) => reactCSS({
         [ r.equals(Kind.PRIMARY), r.always(
           color(palette.jadeGreen).lighten(0.2)
         ) ],
+        [ r.equals(Kind.PRIMARY_ALT), r.always(
+          color(palette.sapphire).lighten(0.2)
+        ) ],
         [ r.equals(Kind.SECONDARY), r.always(
           'transparent'
         ) ],
@@ -77,6 +81,13 @@ const stylesheet = (props) => reactCSS({
       color: '#fff',
     },
   },
+  primaryAlt: {
+    root: {
+      backgroundColor: palette.sapphire,
+      borderColor: palette.sapphire,
+      color: '#fff',
+    },
+  },
   secondary: {
     root: {
       backgroundColor: 'transparent',
@@ -93,6 +104,7 @@ const stylesheet = (props) => reactCSS({
   },
 }, {
   primary: r.equals(props.kind, Kind.PRIMARY),
+  primaryAlt: r.equals(props.kind, Kind.PRIMARY_ALT),
   secondary: r.equals(props.kind, Kind.SECONDARY),
   detrimental: r.equals(props.kind, Kind.DETRIMENTAL),
 }, props);

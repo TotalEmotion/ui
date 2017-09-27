@@ -4,6 +4,7 @@ import {
   compose,
   setDisplayName,
   withProps,
+  defaultProps,
 } from 'recompose';
 import { palette } from '../constants/css';
 
@@ -16,7 +17,7 @@ const stylesheet = () => reactCSS({
       display: 'block',
       fontSize: 14,
       fontWeight: 400,
-      color: palette.dodgerBlue,
+      color: palette.clearBlue,
       marginBottom: 0,
     },
     result: {
@@ -26,6 +27,9 @@ const stylesheet = () => reactCSS({
       fontWeight: 300,
       lineHeight: 1,
     },
+    suffix: {
+      fontSize: 24,
+    },
   },
 });
 
@@ -33,6 +37,7 @@ export const PureMetric = ({
   styles,
   name,
   result,
+  suffix,
 }) => (
   <div style={styles.root}>
     <span style={styles.name}>
@@ -40,12 +45,18 @@ export const PureMetric = ({
     </span>
     <span style={styles.result}>
       {result}
+      <span style={styles.suffix}>
+        {suffix}
+      </span>
     </span>
   </div>
 );
 
 export const enhance = compose(
   setDisplayName('Metric'),
+  defaultProps({
+    suffix: '%',
+  }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
   })),

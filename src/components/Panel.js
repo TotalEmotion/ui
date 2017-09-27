@@ -13,6 +13,7 @@ import r from 'ramda';
 
 const stylesheet = ({
   gutter,
+  borderless,
 }) => reactCSS({
   default: {
     root: {
@@ -30,8 +31,14 @@ const stylesheet = ({
       ...cssSides('padding', Side.A, 0),
     },
   },
+  borderless: {
+    root: {
+      borderWidth: 0,
+    },
+  },
 }, {
   fullBleed: r.equals(gutter, false),
+  borderless: r.equals(borderless, true),
 });
 
 export const PurePanel = ({
@@ -47,6 +54,7 @@ export const enhance = compose(
   setDisplayName('Panel'),
   defaultProps({
     gutter: true,
+    borderless: false,
   }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
