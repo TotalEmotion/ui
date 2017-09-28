@@ -22,6 +22,9 @@ const stylesheet = (props) => reactCSS({
     control: {
       marginTop: 10,
     },
+    notice: {
+      marginTop: 10,
+    },
   },
   flush: {
     root: {
@@ -54,10 +57,12 @@ export const PureLabel = ({
     {r.when(
       rA.isNotNil,
       r.always(
-        <Notice
-          status={status}
-          text={notice}
-        />
+        <div style={styles.notice}>
+          <Notice
+            status={status}
+            text={notice}
+          />
+        </div>
       )
     )(notice)}
   </fieldset>
