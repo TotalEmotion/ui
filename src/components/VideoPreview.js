@@ -25,11 +25,6 @@ const stylesheet = (props) => reactCSS({
   },
   withImage: {
     root: {
-      ...longhand('border', {
-        width: 1,
-        color: palette.cloudyBlue,
-        style: 'solid',
-      }),
       backgroundImage: `url(${props.src}`,
     },
     text: {
