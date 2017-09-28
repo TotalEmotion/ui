@@ -92,6 +92,7 @@ const stylesheet = ({
         marginBottom: 0,
         display: 'flex',
         flexDirection: 'column',
+        textAlign: 'center',
         flex: 1,
         width: '100%',
         borderStyle: 'solid',
@@ -112,10 +113,16 @@ const stylesheet = ({
         textTransform: 'capitalize',
         flexGrow: 1,
       },
-      date: {
+      meta: {
         color: '#555555',
         fontSize: 12,
-        fontWeight: 500,
+        textAlign: 'center',
+        fontWeight: 600,
+      },
+      metaSlash: {
+        paddingLeft: 10,
+        paddingRight: 10,
+        color: palette.paleGrey,
       },
       // the form part
       input: {
@@ -213,6 +220,8 @@ export const PureVideoCard = ({
   mediaSrc,
   title,
   date,
+  views,
+  valence,
   inputProps,
 }) => (
   <div style={styles.root}>
@@ -233,7 +242,13 @@ export const PureVideoCard = ({
               </H>
             )}
           />
-          <span style={styles.date}>{date}</span>
+          <div style={styles.meta}>
+            {date}
+            <span style={styles.metaSlash}>{'/'}</span>
+            {`${views} views`}
+            <span style={styles.metaSlash}>{'/'}</span>
+            {`${valence}% valence`}
+          </div>
         </div>
       </div>
     </div>
@@ -251,6 +266,8 @@ export const enhance = compose(
   defaultProps({
     selectable: false,
     selected: false,
+    views: 0,
+    valence: '0',
   }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),

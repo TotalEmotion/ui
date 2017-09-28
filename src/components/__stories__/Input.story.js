@@ -1,7 +1,7 @@
 import React from 'react';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import Input from '../Input';
+import Input, { Status } from '../Input';
 
 storiesOf('Input', module)
   .add('default', () => {
@@ -10,6 +10,7 @@ storiesOf('Input', module)
         <Input
           onChange={() => console.log('changed')}
           active={boolean('Active', false)}
+          status={select('Status', Status, Status.OK)}
         />
       </div>
     );

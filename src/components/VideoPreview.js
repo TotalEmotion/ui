@@ -19,6 +19,8 @@ const stylesheet = (props) => reactCSS({
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       transition: 'background-image 0.3s ease-in-out',
+      display: 'flex',
+      height: '100%',
     },
   },
   withImage: {
