@@ -9,6 +9,13 @@ import {
 import longhand from '@team-griffin/css-longhand';
 import cssSides, { Side } from '@team-griffin/css-sides';
 import r from 'ramda';
+import { palette } from '../constants/css';
+
+export const Status = {
+  ERROR: 'ERROR',
+  WARNING: 'WARNING',
+  OK: 'OK',
+};
 
 const stylesheet = (props) => reactCSS({
   default: {
@@ -27,7 +34,7 @@ const stylesheet = (props) => reactCSS({
       lineHeight: 1,
       outline: 0,
       fontSize: 14,
-      transition: 'box-shadow 0.3s ease-in-out',
+      transition: 'box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out',
     },
   },
   active: {
@@ -35,8 +42,14 @@ const stylesheet = (props) => reactCSS({
       boxShadow: '0 0 3px rgba(0,0,0,.2)',
     },
   },
+  error: {
+    root: {
+      borderColor: palette.red,
+    },
+  },
 }, {
   active: r.equals(true, props.active),
+  error: r.equals(Status.ERROR, props.status),
 });
 
 export const PureInput = ({
@@ -45,7 +58,7 @@ export const PureInput = ({
 }) => (
   <input
     style={styles.root}
-    {...inputProps}
+    {...r.omit([ 'status' ], inputProps)}
   />
 );
 
@@ -53,6 +66,7 @@ export const enhance = compose(
   setDisplayName('Input'),
   defaultProps({
     type: 'text',
+    status: Status.OK,
   }),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),
