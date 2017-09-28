@@ -44,7 +44,11 @@ const stylesheet = (props) => reactCSS({
       fontSize: 12,
       fontWeight: 600,
       WebkitFontSmoothing: 'antialiased',
-      transition: 'color 0.2s ease-in-out, background-color 0.2s ease-in-out',
+      transition: `
+        color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out
+      `,
     },
   },
   hover: {

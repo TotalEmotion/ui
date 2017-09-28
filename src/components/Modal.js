@@ -64,7 +64,7 @@ const stylesheet = (props) => reactCSS({
   large: {
     content: {
       width: '100%',
-      maxWidth: 800,
+      maxWidth: 580,
       top: 40,
       left: '50%',
       transform: 'translateX(-50%)',

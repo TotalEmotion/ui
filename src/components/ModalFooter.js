@@ -15,8 +15,7 @@ const stylesheet = () => reactCSS({
       marginTop: 'auto',
       backgroundColor: palette.lightGrey,
       position: 'relative',
-      ...cssSides('padding', Side.X, 30),
-      ...cssSides('padding', Side.Y, 25),
+      ...cssSides('padding', Side.A, 20),
     },
   },
 });
