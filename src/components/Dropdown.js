@@ -28,12 +28,12 @@ const stylesheet = (props) => reactCSS({
       position: 'relative',
       ...longhand('font', {
         weight: 400,
+        size: 14,
       }),
     },
 
     control: {
       borderWidth: 0,
-      backgroundColor: '#fff',
       color: '#333',
       cursor: 'default',
       display: 'table',
@@ -57,7 +57,7 @@ const stylesheet = (props) => reactCSS({
       ...longhand('font', {
         weight: 400,
       }),
-      ...cssSides('padding', Side.A, 8),
+      ...cssSides('padding', Side.Y, 8),
       color: '#aaa',
       bottom: 0,
       left: 0,
