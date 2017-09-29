@@ -51,6 +51,7 @@ const stylesheet = (props) => reactCSS({
       top: '100%',
       marginTop: 15,
       right: 0,
+      zIndex: 5,
     },
     caret: {
       width: 0,

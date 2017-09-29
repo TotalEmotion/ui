@@ -28,6 +28,7 @@ const stylesheet = (props) => reactCSS({
       backgroundColor: null,
       overflowX: 'hidden',
       overflowY: 'scroll',
+      zIndex: 10,
     },
     content: {
       // flex as ModalFooter requires anchoring to bottom
