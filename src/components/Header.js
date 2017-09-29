@@ -19,7 +19,7 @@ const stylesheet = ({
 }) => reactCSS({
   default: {
     root: {
-      ...cssSides('padding', Side.Y, 20),
+      ...cssSides('padding', Side.A, 20),
     },
     logo: {
       display: 'flex',
