@@ -8,6 +8,7 @@ import {
 import Masthead from './Masthead';
 import CompanyLogo from './CompanyLogo';
 import PrimaryNavigation from './PrimaryNavigation';
+import UserActions from './UserActions';
 import { createResponsiveConnect } from 'react-matchmedia-connect';
 import { breakpoints } from '../constants/css';
 import cssSides, { Side } from '@team-griffin/css-sides';
@@ -26,6 +27,10 @@ const stylesheet = ({
       marginBottom: 10,
     },
     nav: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    user: {
       display: 'flex',
       justifyContent: 'center',
     },
@@ -61,13 +66,14 @@ const stylesheet = ({
 export const PureHeader = ({
   styles,
   links,
+  actions,
   logoSize,
 }) => (
   <Masthead>
     <header style={styles.root}>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row align-items-center">
-          <div className="col-md-4">
+          <div className="col-md-4 col-12">
             <div style={styles.logo}>
               <CompanyLogo
                 height={logoSize}
@@ -75,16 +81,18 @@ export const PureHeader = ({
               />
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 col-6">
             <div style={styles.nav}>
               <PrimaryNavigation
                 links={links}
               />
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 col-6">
             <div style={styles.user}>
-              
+              <UserActions
+                actions={actions}
+              />
             </div>
           </div>
         </div>

@@ -9,7 +9,9 @@ storiesOf('Header', module)
         logoSize={40}
         links={[
           (<a key="1" href="/videos">Videos</a>),
-          (<a key="2" href="/account">Account</a>),
+        ]}
+        actions={[
+          (<a key="2" href="/account">My Account</a>),
           (<button key="3" onClick={() => console.log('out')}>Log out</button>)
         ]}
       />
