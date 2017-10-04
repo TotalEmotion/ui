@@ -11,7 +11,7 @@ import { InlineSVG } from '@team-griffin/react-inline-svg';
 import { palette, typography } from '../constants/css';
 import r from 'ramda';
 import cssSides, { Side } from '@team-griffin/css-sides';
-import userIcon from '!svg-inline-loader!../assets/clapperboard-icon.svg';
+import userIcon from '!svg-inline-loader!../assets/profile-icon.svg';
 import arrow from '!svg-inline-loader!../assets/arrow.svg';
 
 const stylesheet = (props) => reactCSS({
@@ -26,6 +26,7 @@ const stylesheet = (props) => reactCSS({
       backgroundColor: 'rgba(255,255,255,0.2)',
       borderRadius: 25,
       cursor: 'pointer',
+      ...cssSides('padding', Side.A, 3),
     },
     avatar: {
       width: 32,
