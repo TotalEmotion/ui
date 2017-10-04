@@ -11,7 +11,7 @@ import { InlineSVG } from '@team-griffin/react-inline-svg';
 import { palette, typography } from '../constants/css';
 import r from 'ramda';
 import cssSides, { Side } from '@team-griffin/css-sides';
-import userIcon from '!svg-inline-loader!../assets/profile-icon.svg';
+import profileIcon from '!svg-inline-loader!../assets/profile-icon.svg';
 import arrow from '!svg-inline-loader!../assets/arrow.svg';
 
 const stylesheet = (props) => reactCSS({
@@ -126,7 +126,7 @@ export const PureUserActions = ({
       onClick={handleToggleClick}
     >
       <span style={styles.avatar}>
-        <InlineSVG src={userIcon}/>
+        <InlineSVG src={profileIcon}/>
       </span>
       <span style={styles.arrow}>
         <InlineSVG src={arrow}/>
