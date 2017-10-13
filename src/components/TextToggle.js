@@ -25,13 +25,9 @@ const stylesheet = ({
 }) => reactCSS({
   default: {
     root: {
-      ...cssSides('padding', Side.Y, 15),
-      ...cssSides('margin', Side.X, 25),
-      ...longhand('border', {
-        bottomWidth: 3,
-        bottomStyle: 'solid',
-        bottomColor: 'transparent',
-      }),
+      ...cssSides('padding', Side.A, 10),
+      ...cssSides('margin', Side.X, 15),
+      borderRadius: 3,
       marginBottom: 0,
       cursor: 'pointer',
       color: palette.greyishBrown,
@@ -40,18 +36,40 @@ const stylesheet = ({
       textTransform: 'uppercase',
       fontWeight: 600,
       textAlign: 'center',
+      backgroundColor: 'transparent',
       transition: `
         color, 0.3s ease-in-out,
-        border-bottom-color 0.3s ease-in-out
+        background-color 0.3s ease-in-out
       `,
     },
     input: {
       ...srOnly,
     },
   },
+  joy: {
+    root: {
+      color: palette.clearBlue,
+    },
+  },
+  surprise: {
+    root: {
+      color: palette.orange,
+    },
+  },
+  negative: {
+    root: {
+      color: palette.red,
+    },
+  },
+  attention: {
+    root: {
+      color: palette.jadeGreen,
+    },
+  },
   on: {
     root: {
-      borderBottomColor: r.cond([
+      color: '#fff',
+      backgroundColor: r.cond([
         [ r.equals(Kind.JOY), r.always(palette.clearBlue) ],
         [ r.equals(Kind.SURPRISE), r.always(palette.orange) ],
         [ r.equals(Kind.NEGATIVE), r.always(palette.red) ],
@@ -62,13 +80,16 @@ const stylesheet = ({
   },
   off: {
     root: {
-      opacity: 0.5,
-      color: palette.gunmetal,
+      opacity: 0.8,
     },
   },
 }, {
-  on: r.equals(on, true),
+  joy: r.equals(Kind.JOY, kind),
+  surprise: r.equals(Kind.SURPRISE, kind),
+  negative: r.equals(Kind.NEGATIVE, kind),
+  attention: r.equals(Kind.ATTENTION, kind),
   off: r.equals(on, false),
+  on: r.equals(on, true),
 });
 
 export const PureTextToggle = ({
