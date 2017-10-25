@@ -72,7 +72,7 @@ const stylesheet = (props) => reactCSS({
       ])(props.kind),
       color: r.cond([
         [ r.equals(Kind.SECONDARY), r.always(
-          color(palette.cloudyBlue).darken(0.2)
+          color(palette.murkyBlue).darken(0.2)
         ) ],
         [ r.T, r.always('#ffffff') ],
       ])(props.kind),
@@ -95,8 +95,8 @@ const stylesheet = (props) => reactCSS({
   secondary: {
     root: {
       backgroundColor: 'transparent',
-      borderColor: palette.cloudyBlue,
-      color: palette.cloudyBlue,
+      borderColor: palette.murkyBlue,
+      color: palette.murkyBlue,
     },
   },
   detrimental: {

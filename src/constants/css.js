@@ -5,6 +5,7 @@ export const palette = {
   dark: '#1c272c',
   // variants
   cloudyBlue: '#b0bed6',
+  murkyBlue: '#8995aa',
   darkSkyBlue: '#4a90e2',
   darkSlateBlue: '#1e3b6b',
   dodgerBlue: '#3983ff',
