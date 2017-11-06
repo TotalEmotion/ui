@@ -46,6 +46,7 @@ const stylesheet = (props) => reactCSS({
         style: 'solid',
         color: palette.jadeGreen,
       }),
+      cursor: 'pointer',
     },
 
     controlFocusedNotOpen: {
@@ -163,6 +164,7 @@ const stylesheet = (props) => reactCSS({
       }),
       borderRadius: 0,
       ...cssSides('padding', Side.A, 8),
+      cursor: 'pointer',
     },
 
     optionSelected: {
