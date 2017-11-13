@@ -7,8 +7,8 @@ import {
   withProps,
 } from 'recompose';
 import { InlineSVG } from '@team-griffin/react-inline-svg';
-import companyLogo from '!file-loader!../assets/without_tagline2.jpg'; // needs to be replced by svg
-import companyLogoBranded from '!file-loader!../assets/without_tagline2.jpg'; // needs to be replced by svg
+import companyLogo from '!svg-inline-loader!../assets/logo-final.svg';
+import companyLogoBranded from '!svg-inline-loader!../assets/logo-final.svg';
 import r from 'ramda';
 import rA from 'ramda-adjunct';
 
