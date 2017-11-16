@@ -9,6 +9,7 @@ import {
 } from 'recompose';
 import { createResponsiveConnect } from 'react-matchmedia-connect';
 import { breakpoints, typography } from '../constants/css';
+import cssSides, { Side } from '@team-griffin/css-sides';
 import r from 'ramda';
 
 const stylesheet = (props) => reactCSS({
@@ -32,23 +33,29 @@ const stylesheet = (props) => reactCSS({
       WebkitFontSmoothing: 'antialiased',
     },
     link: {
+      display: 'inline-block',
+      ...cssSides('padding', Side.X, 18),
+      ...cssSides('padding', Side.Y, 11),
       color: 'rgba(255, 255, 255, 0.4)',
       cursor: 'pointer',
       fontSize: 14,
       fontWeight: 600,
       lineHeight: 1,
-      transition: 'color 0.2s ease-in-out',
+      transition: 'border-color 0.2s ease-in-out, color 0.2s ease-in-out',
       outline: 0,
       textTransform: 'uppercase',
       fontFamily: typography.fontFamily,
       backgroundColor: 'transparent',
-      borderWidth: 0,
-      padding: 0,
+      borderWidth: 1,
+      borderColor: 'rgba(255, 255, 255, 0.4)',
+      borderRadius: 30,
+      borderStyle: 'solid',
     },
   },
   hover: {
     link: {
       color: 'rgba(255, 255, 255, 0.5)',
+      borderColor: 'rgba(255, 255, 255, 0.5)',
       textDecoration: 'none',
     },
   },
