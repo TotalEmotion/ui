@@ -32,7 +32,7 @@ export const PureFooter = ({
   <div style={styles.root}>
     <div style={styles.logo}>
       <CompanyLogo
-        height={25}
+        height={55}
         fill="#ffffff"
       />
     </div>

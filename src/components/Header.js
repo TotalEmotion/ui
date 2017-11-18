@@ -45,7 +45,7 @@ const stylesheet = ({
   },
   large: {
     root: {
-      ...cssSides('padding', Side.Y, 45),
+      ...cssSides('padding', Side.Y, 35),
     },
     nav: {
       justifyContent: 'center',

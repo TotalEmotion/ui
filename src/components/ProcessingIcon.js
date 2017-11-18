@@ -25,7 +25,7 @@ const stylesheet = ({
       opacity: 0,
       bottom: 0,
     },
-    '25%': {
+    '35%': {
       opacity: 0,
     },
     '50%': {
@@ -57,7 +57,7 @@ const stylesheet = ({
       bottom: 0,
       opacity: 0,
     },
-    '25%': {
+    '30%': {
       opacity: 0,
     },
     '50%': {
@@ -132,7 +132,7 @@ export const PureProcessingIcon = ({
       <span style={styles.bubble2}/>
       <span style={styles.bubble3}/>
       <div style={styles.icon}>
-        <CompanyIcon size={size}/>
+        <CompanyIcon fill={palette.clearBlue} size={size}/>
       </div>
     </div>
     <p style={styles.text}>{text}</p>

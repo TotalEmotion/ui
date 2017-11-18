@@ -7,8 +7,8 @@ import {
   withProps,
 } from 'recompose';
 import { InlineSVG } from '@team-griffin/react-inline-svg';
-import companyLogo from '!svg-inline-loader!../assets/logo-final.svg';
-import companyLogoBranded from '!svg-inline-loader!../assets/logo-final.svg';
+import companyLogo from '!svg-inline-loader!../assets/logo.svg';
+import companyLogoBranded from '!svg-inline-loader!../assets/logo-on-blue.svg';
 import r from 'ramda';
 import rA from 'ramda-adjunct';
 
@@ -54,8 +54,8 @@ export const enhance = compose(
   }),
   withProps((ownerProps) => ({
     custom: rA.isNotNil(ownerProps.fill),
-    // aspect ratio of SVG: 6.8:1
-    width: ownerProps.height * 6.8,
+    // aspect ratio of SVG: 2.4:1
+    width: ownerProps.height * 2.4,
   })),
   withProps((ownerProps) => ({
     styles: stylesheet(ownerProps),

@@ -8,7 +8,7 @@ import {
 } from 'recompose';
 import { InlineSVG } from '@team-griffin/react-inline-svg';
 import companyIcon from '!svg-inline-loader!../assets/logo-icon.svg';
-import companyIconBranded from '!svg-inline-loader!../assets/logo-icon-branded.svg';
+import companyIconBranded from '!svg-inline-loader!../assets/logo-icon-on-blue.svg';
 import r from 'ramda';
 import rA from 'ramda-adjunct';
 

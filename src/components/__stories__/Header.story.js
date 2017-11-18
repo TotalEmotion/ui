@@ -6,7 +6,7 @@ storiesOf('Header', module)
   .add('default', () => {
     return (
       <Header
-        logoSize={40}
+        logoSize={60}
         links={[
           (<a key="1" href="/videos">Videos</a>),
         ]}
